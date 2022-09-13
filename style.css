@@ -77,6 +77,11 @@ header .logo-container {
 
 .logo {
     height: 70%;
+    transition: .7s;
+}
+
+.logo:hover {
+    transform: scale(1.2);
 }
 
 .header-drawing-container {
@@ -89,15 +94,26 @@ header .logo-container {
     height: 60%;
     position: relative;
     left: 10px;
+    transition: 1s;
+}
+
+.header-drawing:hover {
+    transform: rotate(3turn);
 }
 
 .hamburger-container {
     display: flex;
     justify-content: flex-end;
+    cursor: pointer;
 }
 
 .hamburger {
     height: 60%;
+    transition: 0.5s;
+}
+
+.hamburger:hover {
+    transform: rotate(0.5turn);
 }
 
 .intro {
@@ -144,14 +160,31 @@ header .logo-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-size: cover;
+    font-family: Helvetica;
+    font-weight: 300;
+    font-style: italic;
+    font-size: calc(1.5rem + 2vw);
+    text-align: center;
+    padding: 10px;
+    /* transition: .2s; */
+}
+
+.contact-button:hover,
+.menus-button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    filter: hue-rotate(90deg);
 }
 
 .contact-button {
-    box-shadow: 0 0 10px rgb(225, 109, 194); 
+    background-color: rgba(69, 180, 61, 0.382);
+    box-shadow: 0 0 15px rgb(240, 163, 198); 
 }
 
 .menus-button {
-    box-shadow: 0 0 10px rgb(227, 146, 93); 
+    background-color: rgba(92, 109, 195, 0.493);
+    box-shadow: 0 0 15px rgba(219, 121, 55, 0.909); 
 }
 
 footer {
