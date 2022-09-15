@@ -44,6 +44,8 @@ body {
     flex-direction: column;
     align-items: center;
     gap: calc(.8vh + .5rem + 1vw);
+    background: rgb(56,168,66);
+    background: linear-gradient(90deg, rgba(56,168,66,0.7035407913165266) 0%, rgba(219,152,24,0.6671262254901961) 60%, rgba(255,238,44,0.5802914915966386) 100%);
 }
 
 @font-face {
@@ -56,10 +58,6 @@ body {
     src: url('font/torrefarfan/torrefarfan.ttf') format('truetype');
 }
 
-.apostrophe {
-    font-family: 'Times New Roman';
-}
-
 header {
     width: 85vw;
     max-width: 700px;
@@ -68,6 +66,8 @@ header {
     grid-template-rows: var(--header-footer-height);
     margin-top: calc(1rem + 1vw);
     margin-bottom: 0;
+    align-items: center;
+    justify-items: center;
 }
 
 .logo-container,
@@ -80,15 +80,25 @@ header .logo-container {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    height: calc(var(--header-footer-height) / 2);
+    width: min-content;
+    background-color: white;
+    padding: calc(.4rem + .7vw + .7vh);
+    border-radius: 50px;
+    box-shadow: 0 0 15px rgb(240, 163, 198); 
+    border: 1px solid black;
 }
 
 header .logo {
-    height: 70%;
-    transition: .7s;
+    height: 100%;
+}
+
+header .logo-container {
+    transition: .7s
 }
 
 @media only screen and (min-width: 600px) {
-    header .logo:hover {
+    header .logo-container:hover {
         transform: scale(1.2);
     }
 }
@@ -97,12 +107,17 @@ header .logo {
     display: flex;
     justify-content: center;
     position: relative;
+    height: calc(var(--header-footer-height) / 1.7);
+    width: min-content;
+    background-color: white;
+    padding: calc(.3rem + .5vw + .5vh);
+    border-radius: 50px;
+    box-shadow: 0 0 15px rgb(240, 163, 198); 
+    border: 1px solid black;
 }
 
 .header-drawing {
-    height: 60%;
-    position: relative;
-    left: 10px;
+    height: 100%;
     transition: 1s;
 }
 
@@ -114,12 +129,19 @@ header .logo {
 
 .hamburger-container {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
+    background-color: white;
+    padding: calc(.2rem + .5vw + .5vh);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgb(240, 163, 198); 
+    border: 1px solid black;
+    height: calc(var(--header-footer-height) / 1.7);
 }
 
 .hamburger {
-    height: 60%;
+    height: 100%;
     transition: 0.5s;
 }
 
@@ -198,13 +220,13 @@ header .logo {
 }
 
 .contact-button {
-    background-color: rgba(69, 180, 61, 0.382);
+    background-color: rgb(47, 175, 30);
     box-shadow: 0 0 15px rgb(240, 163, 198); 
 }
 
 .menu-button {
-    background-color: rgba(92, 109, 195, 0.493);
-    box-shadow: 0 0 15px rgba(219, 121, 55, 0.909); 
+    background-color: rgb(56, 202, 185);
+    box-shadow: 0 0 15px rgb(240, 163, 198); 
 }
 
 .menu {
@@ -221,8 +243,8 @@ header .logo {
 
 .email-button {
     width: 100%;
-    background-color: rgba(230, 45, 45, 0.534);
-    box-shadow: 0 0 15px rgb(60, 122, 193);
+    background-color: rgb(111, 212, 130);
+    box-shadow: 0 0 15px rgb(240, 163, 198); 
 }
 
 .email-drawing-container {
@@ -251,7 +273,7 @@ footer {
     margin-bottom: calc(1vw + .3rem);
 }
 
-footer .logo-container {
+/* footer .logo-container {
     width: calc(2rem + 2vw);
     position: relative;
     top: calc(.2rem + .2vw);
@@ -259,6 +281,50 @@ footer .logo-container {
 
 footer .logo {
     width: 100%;
+} */
+
+footer .logo-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: calc(var(--header-footer-height) / 3);
+    width: min-content;
+    background-color: white;
+    padding: calc(.2rem + .5vw + .5vh);
+    border-radius: 50px;
+    box-shadow: 0 0 15px rgb(240, 163, 198); 
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+footer .logo {
+    height: 100%;
+}
+
+.doyle {
+    background-color: white;
+    padding: calc(.1rem + .4vw + .4vh);
+    border-radius: 25px;
+    box-shadow: 0 0 15px rgb(240, 163, 198); 
+    border: 1px solid black;
+}
+
+.insta-container {
+    background-color: white;
+    padding: calc(.2rem + .5vw + .5vh);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgb(240, 163, 198); 
+    border: 1px solid black;
+    height: calc(var(--header-footer-height) / 4);
+    width: calc(var(--header-footer-height) / 4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.insta-container img {
+    height: 80%;
 }
 
 .footer-divider {
