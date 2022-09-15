@@ -87,8 +87,10 @@ header .logo {
     transition: .7s;
 }
 
-header .logo:hover {
-    transform: scale(1.2);
+@media only screen and (min-width: 600px) {
+    header .logo:hover {
+        transform: scale(1.2);
+    }
 }
 
 .header-drawing-container {
@@ -104,8 +106,10 @@ header .logo:hover {
     transition: 1s;
 }
 
-.header-drawing:hover {
-    transform: rotate(3turn);
+@media only screen and (min-width: 600px) {
+    .header-drawing:hover {
+        transform: rotate(3turn);
+    }
 }
 
 .hamburger-container {
@@ -119,8 +123,11 @@ header .logo:hover {
     transition: 0.5s;
 }
 
-.hamburger:hover {
-    transform: rotate(0.5turn);
+
+@media only screen and (min-width: 600px) {
+    .hamburger:hover {
+        transform: rotate(0.5turn);
+    }
 }
 
 .intro {
