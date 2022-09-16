@@ -430,37 +430,21 @@ footer .logo {
 /* menu page */
 
 .menu-main {
-    margin-top: calc(.5vw + .5vh + .5rem);
-    width: 85vw;
+    width: 80vw;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 1.3rem;
+    align-items: center;
 }
 
 .menu-title {
-    margin-bottom: 1.5rem;
-    max-height: calc(1rem + 1.5vh + 1.5vw);
-    display: flex;
-    justify-content: center;
-}
-
-.menu-title img {
-    max-height: 100%;
-    width: auto;
+    min-width: calc(10vw + 200px);
+    max-width: calc(10vw + 250px);
+    margin: calc(1rem + .5vw + .5vh) 0 calc(1.5rem + 1vw + 1vh);
 }
 
 .menu-item {
-    max-height: calc(1.5rem + 1vh + 1vw);
-    display: flex;
-    justify-content: center;
-}
-
-.menu-item img {
-    max-height: 100%;
-    width: auto;
-    max-width: 85vw;
+    min-width: calc(7vw + 200px);
+    max-width: calc(9vw + 200px);
 }
 
 /* about page */
