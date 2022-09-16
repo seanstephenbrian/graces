@@ -188,6 +188,12 @@ header .logo {
     cursor: pointer;
 }
 
+.nav .close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .close img {
     height: calc(2vw + 1.8rem);
     cursor: pointer;
