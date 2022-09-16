@@ -162,6 +162,7 @@ header .logo {
     border-radius: 5px;
     box-shadow: 0 0 50px 40px rgba(246, 193, 217, 0.919); 
     padding: clamp(0.2rem, .6vw, 1.1rem);
+    z-index: 2;
 }
 
 .nav ul {
@@ -355,6 +356,13 @@ footer .logo {
 
 .insta-container img {
     height: 80%;
+    transition: 1s;
+}
+
+@media only screen and (min-width: 600px) {
+    .insta-container img:hover {
+        transform: rotate(3turn);
+    }
 }
 
 .footer-divider {
