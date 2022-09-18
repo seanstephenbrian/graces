@@ -344,7 +344,7 @@ footer {
 
 @media only screen and (max-width: 600px) {
     .bump-footer {
-        margin-bottom: 10vh;
+        margin-bottom: 15vh;
     }
 }
 
