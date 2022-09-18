@@ -43,6 +43,10 @@ body {
     --button-width: calc(2*(var(--button-height)));
 }
 
+.bound-body {
+    max-height: 100vh;
+}
+
 body {
     position: relative;
     max-width: 100vw;
