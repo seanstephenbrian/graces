@@ -43,14 +43,10 @@ body {
     --button-width: calc(2*(var(--button-height)));
 }
 
-.bound-body {
-    max-height: 100vh;
-}
-
 body {
     position: relative;
-    max-width: 100vw;
     min-height: 100vh;
+    max-width: 100vw;
     font-family: 'Torre Farfan', 'Helvetica', 'Times New Roman', 'Open Sans', Arial;
     font-weight: lighter;
     display: flex;
@@ -346,6 +342,12 @@ footer {
     margin-bottom: calc(1vw + .3rem);
 }
 
+@media only screen and (max-width: 600px) {
+    .bump-footer {
+        margin-bottom: 10vh;
+    }
+}
+
 footer .logo-container {
     height: calc(var(--header-footer-height) / 3);
     cursor: pointer;
@@ -404,7 +406,6 @@ footer .logo {
 .contact-main {
     flex: auto;
     width: 100vw;
-    /* height: 40vh; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -419,7 +420,6 @@ footer .logo {
 .events-main {
     flex: auto;
     width: 100vw;
-    /* height: 40vh; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -456,7 +456,6 @@ footer .logo {
 .about-main {
     flex: auto;
     width: 100vw;
-    /* height: 40vh; */
     display: flex;
     justify-content: center;
     align-items: center;
