@@ -19,7 +19,13 @@ function toggleNav() {
 //   }
 // });
 
-addEventListener('resize', () => {
+function setBodyHeight() {
   const windowHeight = window.innerHeight + "px";
   document.body.style.minHeight = windowHeight;
+}
+
+setBodyHeight();
+
+addEventListener('resize', () => {
+  setBodyHeight();
 });
