@@ -43,9 +43,22 @@ body {
     --button-width: calc(2*(var(--button-height)));
 }
 
+
+@media only screen and (max-width: 600px) {
+    .header-drawing:hover {
+        transform: rotate(3turn);
+    }
+}
+
+
+/* @media only screen and (min-width: 600px) {
+    body {
+        min-height: 100vh;
+    }
+} */
+
 body {
     position: relative;
-    min-height: 100vh;
     max-width: 100vw;
     font-family: 'Torre Farfan', 'Helvetica', 'Times New Roman', 'Open Sans', Arial;
     font-weight: lighter;
@@ -342,11 +355,11 @@ footer {
     margin-bottom: calc(1vw + .3rem);
 }
 
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) {
     .bump-footer {
         margin-bottom: 15vh;
     }
-}
+} */
 
 footer .logo-container {
     height: calc(var(--header-footer-height) / 3);
@@ -455,6 +468,7 @@ footer .logo {
 
 .about-main {
     flex: auto;
+    height: 100%;
     width: 100vw;
     display: flex;
     justify-content: center;

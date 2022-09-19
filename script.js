@@ -7,3 +7,19 @@ function toggleNav() {
     const nav = document.querySelector(".nav");
     nav.classList.toggle("hide");
 }
+
+// set min body height to inner window height:
+
+// addEventListener('resize', () => {
+//   if (window.innerWidth < 600) {
+//     const windowHeight = window.innerHeight + "px";
+//     document.body.style.minHeight = windowHeight;
+//   } else {
+//     document.body.style.minHeight = '100vh';
+//   }
+// });
+
+addEventListener('resize', () => {
+  const windowHeight = window.innerHeight + "px";
+  document.body.style.minHeight = windowHeight;
+});
