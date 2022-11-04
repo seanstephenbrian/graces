@@ -5,25 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <script src="index.js" defer></script>
     <title>graces | a pennsylvania eatery</title>
 </head>
 <body>
+<div class="wrapper">
 
     <header>
-        <div class="logo-container"><img class="logo" src="img/logo.jpg" alt="Handwritten text reading Graces"></div>
+        <div class="logo-container"><img class="logo" src="img/logo.jpg" alt="Graces"></div>
         <div class="header-drawing-container"><img class="header-drawing" src="img/header-drawing.jpg" alt="Drawing of a tomato"></div>
         <div class="hamburger-container" onclick="toggleNav()"><img class="hamburger" src="img/list.svg"></div>
     </header>
 
-    <div class="nav hide">
+    <div class="nav">
         <ul class="nav-list">
-            <a href="menu.html"><li class="menu-link">menu</li></a>
-            <a href="events.html"><li class="events">events</li></a>
-            <a href="contact.html"><li class="contact-link">contact</li></a>
-            <a href="https://mailchi.mp/56e44903e4bd/graces-email-newsletter"><li class="newsletter-link">newsletter</li></a>
-            <a href="about.html"><li class="about-link">about</li></a>
-            <li class="close" onclick="toggleNav()"><img src="img/close.svg"></li>
+            <li class="nav-menu">menu</li>
+            <li class="nav-events">events</li>
+            <li class="nav-contact">contact</li>
+            <li class="nav-newsletter">newsletter</li>
+            <li class="nav-about">about</li>
+            <li class="nav-close"><img src="img/close.svg"></li>
         </ul>
     </div>
 
@@ -55,5 +56,6 @@
         <div class="footer-divider"><img src="img/header-drawing.jpg"></div>
         <a href="https://www.instagram.com/graces_PA/"><div class="insta-container"><img src="img/instagram.svg"></div></a>
     </footer>
+</div>
 </body>
 </html>
