@@ -1,0 +1,21 @@
+/* menu page */
+
+.menu-main {
+    flex: auto;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-title {
+    min-width: calc(10vw + 200px);
+    max-width: calc(10vw + 250px);
+    margin-bottom: calc(1.5rem + 1vw + 1vh);
+}
+
+.menu-item {
+    min-width: calc(7vw + 200px);
+    max-width: calc(9vw + 200px);
+}

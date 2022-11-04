@@ -1,0 +1,118 @@
+/* homepage styling: */
+
+.intro {
+    font-size: calc(0.7*var(--rvv));
+    width: 85vw;
+    max-width: 80rem;
+    margin: 0 7.5vw 2vh;
+    display: flex;
+    gap: 2vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.graces-web-portal {
+    color: blue;
+    font-family: 'Helico Centrica';
+    text-shadow: 0 0 5px var(--green-glow);
+}
+
+.p2 {
+    margin-top: -1.5vh;
+}
+
+.contact,
+.menu {
+    display: flex;
+    gap: 1rem;
+    max-width: 100vw;
+    margin-bottom: calc(2rem + 1vh);
+}
+
+.contact-drawing-container,
+.menu-drawing-container {
+    height: var(--button-height);
+}
+
+.contact-drawing,
+.menu-drawing {
+    height: 100%;
+}
+
+.contact-button,
+.menu-button {
+    height: var(--button-height);
+    width: var(--button-width);
+}
+
+.contact-button,
+.menu-button,
+.email-button {
+    max-height: 40vw;
+    max-width: 40vw;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    font-family: Helvetica;
+    font-weight: 300;
+    font-style: italic;
+    font-size: calc(1.5rem + 2vw);
+    text-align: center;
+    padding: 10px;
+    /* transition: .2s; */
+}
+
+.contact-button:hover,
+.menu-button:hover,
+.email-button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    filter: hue-rotate(90deg);
+}
+
+.contact-button {
+    background-color: var(--creamy-blue);
+    box-shadow: 0 0 15px var(--pink-glow); 
+}
+
+.menu-button {
+    background-color: var(--patagonia-teal);
+    box-shadow: 0 0 15px var(--pink-glow); 
+}
+
+.menu {
+    margin-bottom: calc(1rem + 1vh);
+}
+
+.email {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: calc(1rem + 1vh);
+    max-width: 80vw;
+}
+
+.email-button {
+    width: 100%;
+    background-color: var(--asparagus-soup);
+    box-shadow: 0 0 15px var(--pink-glow); 
+}
+
+.email-drawing-container {
+    width: var(--button-width);
+}
+
+.email-drawing {
+    width: 100%;
+    margin-bottom: calc(2rem + 1vh);
+}
+
+.email-button {
+    min-width: calc(1.2*var(--button-width));
+    padding: 15px 5px;
+}

@@ -1,0 +1,13 @@
+/* event page */
+
+.events-main {
+    flex: auto;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.events-main img {
+    width: calc(10rem + 10vh + 10vw);
+}

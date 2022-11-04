@@ -1,0 +1,13 @@
+/* contact page: */
+
+.contact-main {
+    flex: auto;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-main img {
+    width: calc(10rem + 10vh + 10vw);
+}

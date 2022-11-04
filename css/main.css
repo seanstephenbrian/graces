@@ -1,0 +1,312 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+a,
+a:hover,
+a:focus {
+    text-decoration: none;
+    color: inherit;
+}
+
+:root {
+    --pink-glow: rgb(240, 163, 198);
+    --green-glow: rgb(47, 255, 0);
+    --orange-glow: rgb(255, 106, 0);
+    --creamy-blue: rgb(0, 115, 255);
+    --patagonia-teal: rgb(56, 202, 185);
+    --asparagus-soup: rgb(111, 212, 130);
+    --egg: #ffd45320;
+    --rvv: calc(1rem + 1vh + 1vw);
+    --header-footer-height: calc(2*var(--rvv));
+    --button-height: calc(5*var(--rvv));
+    --button-width: calc(7*var(--rvv));
+    --close-icon: calc(1.5*var(--rvv));
+}
+
+@font-face {
+    font-family: 'Helico Centrica';
+    src: url('../font/helico-centrica/helico-centrica-roman.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Torre Farfan';
+    src: url('../font/torrefarfan/torrefarfan.ttf') format('truetype');
+}
+
+.apostrophe {
+    font-family: 'Times New Roman';
+}
+
+html,
+body {
+    min-height: 100vh;
+    min-width: 100vw;
+    overflow-x: hidden;
+    appearance: none;
+    outline: none;
+    font-family: 'Torre Farfan', 'Helvetica', 'Times New Roman', 'Open Sans', Arial;
+}
+
+.hide {
+    display: none;
+}
+
+.wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: calc(.8vh + .5rem + 1vw);
+}
+
+/* header */
+
+header {
+    min-width: 60%;
+    max-width: 80%;
+    display: grid;
+    gap: .8rem;
+    grid-template-columns: 1fr 1fr 6fr;
+    grid-template-rows: var(--header-footer-height);
+    grid-template-areas: "logo header-drawing hamburger";
+    margin-top: calc(1rem + 1vw);
+    margin-bottom: 0;
+    align-items: center;
+    justify-items: center;
+}
+
+.logo-container,
+.header-drawing-container {
+    height: 100%;
+}
+
+header .logo-container {
+    grid-area: logo;
+    justify-self: end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-right: calc(0.2*var(--rvv));
+}
+
+.logo {
+    height: 50%;
+    position: relative;
+    top: calc(0.2*var(--rvv));
+    transition: 0.2s ease-in-out;
+}
+
+.header-drawing-container {
+    grid-area: header-drawing;
+    justify-self: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: calc(0.2*var(--rvv));
+}
+
+.header-drawing {
+    height: 70%;
+    transition: 1s;
+}
+
+.hamburger-container {
+    grid-area: hamburger;
+    height: calc(var(--rvv));
+    width: calc(var(--rvv));
+    justify-self: end;
+    align-self: center;
+    cursor: pointer;
+    background-color: var(--egg);
+    padding: calc(0.3*var(--rvv));
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--pink-glow);
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hamburger {
+    height: calc(var(--rvv));
+    transition: 0.3s ease-in-out;
+}
+
+/* nav bar: */
+
+.nav {
+    min-width: calc(70vw);
+    max-width: calc(100vw - 2*var(--rvv));
+    height: calc(3*var(--rvv));
+    position: fixed;
+    top: calc(var(--rvv));
+    background-color: white;
+    border: 1px solid blue;
+    border-radius: 10px;
+    box-shadow: 0 0 50px 40px rgba(246, 193, 217, 0.919); 
+    padding: 0 calc(0.3*var(--rvv));
+    z-index: 2;
+}
+
+.nav ul {
+    color: blue;
+    font-family: 'Helico Centrica';
+    text-shadow: 0 0 5px var(--green-glow);
+    font-size: calc(0.6*var(--rvv));
+    list-style: none;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-left: calc(-0.1*var(--rvv));
+}
+
+.nav ul * {
+    height: calc(var(--rvv));
+}
+
+.nav li {
+    position: relative;
+    cursor: pointer;
+    width: calc(2.5*var(--rvv));
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav li:not(:last-child) {
+    top: calc(0.07*var(--rvv));
+}
+
+.nav-contact {
+    margin-right: calc(0.4*var(--rvv));
+}
+
+.nav-close {
+    min-height: var(--close-icon);
+    max-height: var(--close-icon);
+    min-width: var(--close-icon);
+    max-width: var(--close-icon);
+}
+
+.nav-close img {
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    transition: .7s;
+    filter: drop-shadow(0 0 4px var(--orange-glow));
+}
+
+/* footer: */
+
+footer {
+    min-height: var(--header-footer-height);
+    max-height: var(2*calc(--rvv));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: calc(0.4*var(--rvv));
+    font-size: calc(0.5*var(--rvv));
+    position: relative;
+    margin-top: auto;
+    margin-bottom: calc(0.3*var(--rvv));
+}
+
+footer .logo-container {
+    height: calc(var(--header-footer-height) / 3);
+    cursor: pointer;
+    position: relative;
+    top: calc(-0.1*var(--rvv))
+}
+
+footer .logo {
+    height: 100%;
+}
+
+.insta-container {
+    background-color: white;
+    padding: calc(0.3*var(--rvv));
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--pink-glow); 
+    border: 1px solid black;
+    height: calc(var(--header-footer-height) / 4);
+    width: calc(var(--header-footer-height) / 4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.insta-container img {
+    height: 80%;
+}
+
+.footer-divider {
+    margin: 0 calc(var(--rvv));
+    height: 100%;
+}
+
+.footer-divider img {
+    height: calc(var(--rvv));
+}
+
+/* desktop page effects: */
+
+@media only screen and (min-width: 750px) {
+
+    .nav ul {
+        font-size: calc(0.8*var(--rvv));
+    }
+
+    header .logo:hover {
+        transform: scale(1.2);
+    }
+
+    .header-drawing:hover {
+        transform: rotate(-2.7turn);
+    }
+
+    .hamburger:hover {
+        transform: rotate(1turn);
+    }
+
+    .nav li:hover {
+        color: var(--orange-glow);
+    }
+
+    .nav-close img:hover {
+        transform: rotate(5turn);
+    }
+
+    footer .logo:hover {
+        transform: rotate(0.45turn);
+    }
+
+    .insta-container:hover {
+        transform: scale(1.5);
+    }
+}
