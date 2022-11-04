@@ -49,7 +49,7 @@
 
 .contact-button,
 .menu-button,
-.email-button {
+.newsletter-button {
     max-height: 40vw;
     max-width: 40vw;
     border: 1px solid black;
@@ -69,7 +69,7 @@
 
 .contact-button:hover,
 .menu-button:hover,
-.email-button:hover {
+.newsletter-button:hover {
     cursor: pointer;
     transform: scale(1.1);
     filter: hue-rotate(90deg);
@@ -89,7 +89,7 @@
     margin-bottom: calc(1rem + 1vh);
 }
 
-.email {
+.newsletter {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -97,22 +97,22 @@
     max-width: 80vw;
 }
 
-.email-button {
+.newsletter-button {
     width: 100%;
     background-color: var(--asparagus-soup);
     box-shadow: 0 0 15px var(--pink-glow); 
 }
 
-.email-drawing-container {
+.newsletter-drawing-container {
     width: var(--button-width);
 }
 
-.email-drawing {
+.newsletter-drawing {
     width: 100%;
     margin-bottom: calc(2rem + 1vh);
 }
 
-.email-button {
+.newsletter-button {
     min-width: calc(1.2*var(--button-width));
     padding: 15px 5px;
 }

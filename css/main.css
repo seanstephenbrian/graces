@@ -71,11 +71,15 @@ body {
 
 .wrapper {
     height: 100%;
+}
+
+.wrapper,
+.main {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: calc(.8vh + .5rem + 1vw);
+    gap: calc(var(--rvv));
 }
 
 /* header */
@@ -100,6 +104,7 @@ header {
 }
 
 header .logo-container {
+    cursor: pointer;
     grid-area: logo;
     justify-self: end;
     display: flex;
