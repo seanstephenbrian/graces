@@ -6,6 +6,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    margin: 0 calc(1.2*var(--rvv));
     gap: calc(0.6*var(--rvv));
     font-size: calc(0.8*var(--rvv));
 }
