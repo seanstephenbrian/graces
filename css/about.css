@@ -2,13 +2,7 @@
 
 .about-main {
     flex: auto;
-    height: 100%;
-    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.about-main img {
-    width: calc(10rem + 10vh + 10vw);
 }

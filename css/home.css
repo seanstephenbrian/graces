@@ -13,12 +13,6 @@
     text-align: center;
 }
 
-.graces-web-portal {
-    color: blue;
-    font-family: 'Helico Centrica';
-    text-shadow: 0 0 5px var(--green-glow);
-}
-
 .p2 {
     margin-top: -1.5vh;
 }
@@ -58,13 +52,17 @@
     justify-content: center;
     align-items: center;
     background-size: cover;
-    font-family: Helvetica;
-    font-weight: 300;
+    font-family: 'Helico Centrica';
+    font-weight: 100;
     font-style: italic;
-    font-size: calc(1.5rem + 2vw);
+    font-size: calc(1.4*var(--rvv));
     text-align: center;
     padding: 10px;
     /* transition: .2s; */
+}
+
+.newsletter-button {
+    font-size: calc(var(--rvv));
 }
 
 .contact-button:hover,

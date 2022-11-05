@@ -57,11 +57,11 @@ function renderHome() {
 
         <div class="contact">
             <div class="contact-drawing-container"><img src="img/contact-drawing.jpg" alt="ALT GOES HERE" class="contact-drawing"></div>
-            <div class="contact-button">CONTACT US</div>
+            <div class="contact-button">contact us</div>
         </div>
         
         <div class="menu">
-            <div class="menu-button">TODAY'S MENU</div>
+            <div class="menu-button">today's menu</div>
             <div class="menu-drawing-container"><img src="img/menu-drawing.jpg" alt="ALT GOES HERE" class="menu-drawing"></div>
         </div>
 
@@ -96,17 +96,35 @@ function renderMenuPage() {
         <img class="menu-item" src="img/menu-items/fennel-arugula-salad.jpg" alt="fennel and arugula salad">
         <img class="menu-item" src="img/menu-items/beans.jpg" alt="cup of beans">
     `;
-
 }
 
 function renderEventsPage() {
     hideNav();
 
+    const stylesheet = document.querySelector('.page-stylesheet');
+    stylesheet.setAttribute('href', 'css/events.css');
+
+    const main = document.querySelector('.main');
+    main.innerHTML = `
+        <div class="events-main">
+            <img src="img/coming-soon.jpg" class="coming-soon" alt="coming soon">
+        </div>
+    `;
 }
 
 function renderContactPage() {
     hideNav();
 
+    const stylesheet = document.querySelector('.page-stylesheet');
+    stylesheet.setAttribute('href', 'css/contact.css');
+
+    const main = document.querySelector('.main');
+    main.innerHTML = `
+        <div class="contact-main">
+            <div class="inquires">for inquiries, please email <span class="graces-web-portal">letsgotograces@gmail.com</span>.</div>
+            <div class="coming-next">to find out what we<span class="apostrophe">'</span>re up to next, sign up for our newsletter <span class="inline-newsletter graces-web-portal" onclick="sendToMailchimp()">here</span>.</div>
+        </div>
+    `;
 }
 
 function sendToMailchimp() {
@@ -116,6 +134,15 @@ function sendToMailchimp() {
 function renderAboutPage() {
     hideNav();
 
+    const stylesheet = document.querySelector('.page-stylesheet');
+    stylesheet.setAttribute('href', 'css/about.css');
+
+    const main = document.querySelector('.main');
+    main.innerHTML = `
+        <div class="about-main">
+            <img src="img/coming-soon.jpg" class="coming-soon" alt="coming soon">
+        </div>
+    `;
 }
 
 function scrollUp() {

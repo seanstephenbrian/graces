@@ -38,7 +38,7 @@ a:focus {
     --header-footer-height: calc(2*var(--rvv));
     --button-height: calc(5*var(--rvv));
     --button-width: calc(7*var(--rvv));
-    --close-icon: calc(1.5*var(--rvv));
+    --close-icon: calc(0.55*var(--rvv));
 }
 
 @font-face {
@@ -53,6 +53,12 @@ a:focus {
 
 .apostrophe {
     font-family: 'Times New Roman';
+}
+
+.graces-web-portal {
+    color: blue;
+    font-family: 'Helico Centrica';
+    text-shadow: 0 0 5px var(--green-glow);
 }
 
 html,
@@ -70,11 +76,12 @@ body {
 }
 
 .wrapper {
-    height: 100%;
+    min-height: 100vh;
 }
 
 .wrapper,
 .main {
+    flex: auto;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -205,15 +212,28 @@ header .logo-container {
     top: calc(0.07*var(--rvv));
 }
 
+.nav li:last-child {
+    margin-left: 0;
+}
+
 .nav-contact {
     margin-right: calc(0.4*var(--rvv));
 }
 
 .nav-close {
+    position: relative;
     min-height: var(--close-icon);
     max-height: var(--close-icon);
     min-width: var(--close-icon);
     max-width: var(--close-icon);
+    border: 1px solid black;
+    background-color: var(--egg);
+    padding: calc(0.1*var(--rvv));
+    border-radius: 50%;
+    bottom: calc(0.8*var(--rvv));
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav-close img {
@@ -221,7 +241,6 @@ header .logo-container {
     width: 100%;
     cursor: pointer;
     transition: .7s;
-    filter: drop-shadow(0 0 4px var(--orange-glow));
 }
 
 /* footer: */
@@ -279,6 +298,12 @@ footer .logo {
     height: calc(var(--rvv));
 }
 
+/* coming soon image: */
+
+.coming-soon {
+    width: calc(10*var(--rvv));
+}
+
 /* desktop page effects: */
 
 @media only screen and (min-width: 750px) {
@@ -313,5 +338,9 @@ footer .logo {
 
     .insta-container:hover {
         transform: scale(1.5);
+    }
+
+    .nav li:last-child {
+        margin-left: -3vw;
     }
 }
