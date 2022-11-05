@@ -183,7 +183,7 @@ function renderAboutPage() {
 
     const aboutText = document.createElement('div');
     aboutText.classList.add('about-text');
-    aboutText.innerText = 'graces is a food pop-up in bucks county, PA, serving up mid-atlantic by midwest sandwiches, salads, pastries, and more. :)';
+    aboutText.innerHTML = 'graces is a food pop-up in bucks county, PA, serving up mid-atlantic by midwest sandwiches, salads, pastries, and more. <span class="apostrophe">:)</span>';
     aboutMain.appendChild(aboutText);
 }
 
