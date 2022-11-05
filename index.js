@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', addInitialListeners);
-window.addEventListener('DOMContentLoaded', renderHome);
+window.addEventListener('DOMContentLoaded', storeHomeHtml);
 
 function addInitialListeners() {
     // add click listener to header icons:
@@ -22,6 +22,8 @@ function addInitialListeners() {
     const closeButton = document.querySelector('.nav-close');
     closeButton.addEventListener('click', hideNav);
 
+    addHomeListeners();
+
     // add click listener to bottom 'graces' logo to scroll to top of page:
     const footerLogo = document.querySelector('.footer-logo');
     footerLogo.addEventListener('click', scrollUp);
@@ -29,6 +31,16 @@ function addInitialListeners() {
     // add click listener to instagram icon:
     const insta = document.querySelector('.insta-container');
     insta.addEventListener('click', sendToInsta);
+}
+
+function addHomeListeners() {
+    // add click event listeners to homepage buttons:
+    const contactButton = document.querySelector('.contact-button');
+    contactButton.addEventListener('click', renderContactPage);
+    const menuButton = document.querySelector('.menu-button');
+    menuButton.addEventListener('click', renderMenuPage);
+    const newsletterButton = document.querySelector('.newsletter-button');
+    newsletterButton.addEventListener('click', sendToMailchimp);
 }
 
 function showNav() {
@@ -41,6 +53,12 @@ function hideNav() {
     nav.classList.add('hide');
 }
 
+function storeHomeHtml() {
+    const homeMain = document.querySelector('.main');
+    const homeHtml = homeMain.innerHTML;
+    localStorage.setItem('homeHtml', homeHtml);
+}
+
 function renderHome() {
     hideNav();
 
@@ -48,36 +66,13 @@ function renderHome() {
     stylesheet.setAttribute('href', 'css/home.css');
 
     const main = document.querySelector('.main');
-    main.innerHTML = `
-        <div class="intro">
-            <div class="p1">hello and welcome to the <span class="graces-web-portal">Graces Web Portal</span>.</div>
-            <div class="p2">we<span class="apostrophe">'</span>re cooking with the seasons in bucks county, pennsylvania.</div>
-            <div class="p3">if you want to eat, we want to feed you!</div>
-        </div>
+    const homeHtml = localStorage.getItem('homeHtml');
+    main.innerHTML = homeHtml;
 
-        <div class="contact">
-            <div class="contact-drawing-container"><img src="img/contact-drawing.jpg" alt="ALT GOES HERE" class="contact-drawing"></div>
-            <div class="contact-button">contact us</div>
-        </div>
-        
-        <div class="menu">
-            <div class="menu-button">today's menu</div>
-            <div class="menu-drawing-container"><img src="img/menu-drawing.jpg" alt="ALT GOES HERE" class="menu-drawing"></div>
-        </div>
-
-        <div class="newsletter">
-            <div class="newsletter-drawing-container"><img src="img/newsletter-drawing.jpg" alt="ALT GOES HERE" class="newsletter-drawing"></div>
-            <div class="newsletter-button">newsletter sign-up</div>
-        </div>
-    `;
-    // add click event listeners to homepage buttons:
-    const contactButton = document.querySelector('.contact-button');
-    contactButton.addEventListener('click', renderContactPage);
-    const menuButton = document.querySelector('.menu-button');
-    menuButton.addEventListener('click', renderMenuPage);
-    const newsletterButton = document.querySelector('.newsletter-button');
-    newsletterButton.addEventListener('click', sendToMailchimp);
+    addHomeListeners();
+    
 }
+
 
 function renderMenuPage() {
     hideNav();
@@ -86,16 +81,32 @@ function renderMenuPage() {
     stylesheet.setAttribute('href', 'css/menu.css');
     
     const main = document.querySelector('.main');
-    main.innerHTML = `
-        <img class="menu-title" src="img/current-menu.jpg" alt="current menu">
+    main.innerHTML = '';
 
-        <img class="menu-item" src="img/menu-items/tagliatelle.jpg" alt="tagliatelle al ragu alla bolognese">
-        <img class="menu-item" src="img/menu-items/breakfast-sandwich.jpg" alt="breakfast sandwich">
-        <img class="menu-item" src="img/menu-items/granola.jpg" alt="granola and house yogurt">
-        <img class="menu-item" src="img/menu-items/mostaccioli.jpg" alt="mostaccioli all'arrabbiata">
-        <img class="menu-item" src="img/menu-items/fennel-arugula-salad.jpg" alt="fennel and arugula salad">
-        <img class="menu-item" src="img/menu-items/beans.jpg" alt="cup of beans">
-    `;
+    const menuTitle = document.createElement('img');
+    menuTitle.classList.add('menu-title');
+    menuTitle.setAttribute('src', 'img/current-menu.jpg');
+    menuTitle.setAttribute('alt', 'current menu');
+    main.appendChild(menuTitle);
+
+    const currentMenu = [
+        'tagliatelle',
+        'breakfast-sandwich',
+        'granola',
+        'mostaccioli',
+        'fennel-arugula-salad',
+        'beans'
+    ];
+
+    currentMenu.forEach(item => {
+        const newItem = document.createElement('img');
+        newItem.classList.add('menu-item');
+        newItem.classList.add(`${item}`);
+        newItem.setAttribute('src', `img/menu-items/${item}.jpg`);
+        newItem.setAttribute('alt', `${item}`);
+        main.appendChild(newItem);
+    });
+
 }
 
 function renderEventsPage() {

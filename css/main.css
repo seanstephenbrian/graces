@@ -39,6 +39,7 @@ a:focus {
     --button-height: calc(5*var(--rvv));
     --button-width: calc(7*var(--rvv));
     --close-icon: calc(0.55*var(--rvv));
+    --home-margin: calc(0.9*var(--rvv));
 }
 
 @font-face {
