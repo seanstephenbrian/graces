@@ -59,6 +59,14 @@ function storeHomeHtml() {
     localStorage.setItem('homeHtml', homeHtml);
 }
 
+function appendComingSoon(parent) {
+    const comingSoon = document.createElement('img');
+    comingSoon.classList.add('coming-soon');
+    comingSoon.setAttribute('src', 'img/coming-soon.jpg');
+    comingSoon.setAttribute('alt', 'coming soon');
+    parent.appendChild(comingSoon);
+}
+
 function renderHome() {
     hideNav();
 
@@ -66,11 +74,14 @@ function renderHome() {
     stylesheet.setAttribute('href', 'css/home.css');
 
     const main = document.querySelector('.main');
-    const homeHtml = localStorage.getItem('homeHtml');
-    main.innerHTML = homeHtml;
-
-    addHomeListeners();
+    if (localStorage.getItem('homeHtml')) {
+        const homeHtml = localStorage.getItem('homeHtml');
+        main.innerHTML = homeHtml;
+    } else {
+        location.reload();
+    }
     
+    addHomeListeners();
 }
 
 
@@ -116,11 +127,13 @@ function renderEventsPage() {
     stylesheet.setAttribute('href', 'css/events.css');
 
     const main = document.querySelector('.main');
-    main.innerHTML = `
-        <div class="events-main">
-            <img src="img/coming-soon.jpg" class="coming-soon" alt="coming soon">
-        </div>
-    `;
+    main.innerHTML = '';
+
+    const eventsMain = document.createElement('div');
+    eventsMain.classList.add('events-main');
+    main.appendChild(eventsMain);
+
+    appendComingSoon(eventsMain);   
 }
 
 function renderContactPage() {
@@ -130,12 +143,25 @@ function renderContactPage() {
     stylesheet.setAttribute('href', 'css/contact.css');
 
     const main = document.querySelector('.main');
-    main.innerHTML = `
-        <div class="contact-main">
-            <div class="inquires">for inquiries, please email <span class="graces-web-portal">letsgotograces@gmail.com</span>.</div>
-            <div class="coming-next">to find out what we<span class="apostrophe">'</span>re up to next, sign up for our newsletter <span class="inline-newsletter graces-web-portal" onclick="sendToMailchimp()">here</span>.</div>
-        </div>
-    `;
+    main.innerHTML = '';
+
+    const contactMain = document.createElement('div');
+    contactMain.classList.add('contact-main');
+    main.appendChild(contactMain);
+
+    const contactText = document.createElement('div');
+    contactText.classList.add('contact-text');
+    contactMain.appendChild(contactText);
+
+    const inquiries = document.createElement('div');
+    inquiries.classList.add('inquiries');
+    inquiries.innerHTML = `for inquiries, please email <span class="graces-web-portal">letsgotograces@gmail.com</span>.`;
+    contactText.appendChild(inquiries);
+
+    const comingNext = document.createElement('div');
+    comingNext.classList.add('coming-next');
+    comingNext.innerHTML = `to find out what we<span class="apostrophe">'</span>re up to next, sign up for our newsletter <span class="inline-link graces-web-portal" onclick="sendToMailchimp()">here</span>.`;
+    contactText.appendChild(comingNext);
 }
 
 function sendToMailchimp() {
@@ -149,11 +175,16 @@ function renderAboutPage() {
     stylesheet.setAttribute('href', 'css/about.css');
 
     const main = document.querySelector('.main');
-    main.innerHTML = `
-        <div class="about-main">
-            <img src="img/coming-soon.jpg" class="coming-soon" alt="coming soon">
-        </div>
-    `;
+    main.innerHTML = '';
+
+    const aboutMain = document.createElement('div');
+    aboutMain.classList.add('about-main');
+    main.appendChild(aboutMain);
+
+    const aboutText = document.createElement('div');
+    aboutText.classList.add('about-text');
+    aboutText.innerText = 'graces is a food pop-up in bucks county, PA, serving up mid-atlantic by midwest sandwiches, salads, pastries, and more. :)';
+    aboutMain.appendChild(aboutText);
 }
 
 function scrollUp() {

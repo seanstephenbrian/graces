@@ -3,6 +3,16 @@
 .about-main {
     flex: auto;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+.about-text {
+    text-align: center;
+    position: relative;
+    bottom: 10vh;
+    font-size: calc(0.8*var(--rvv));
+    width: 60vw;
 }

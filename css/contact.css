@@ -6,20 +6,28 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+.contact-text {
+    position: relative;
+    bottom: 10vh;
     text-align: center;
-    margin: 0 calc(1.2*var(--rvv));
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
     gap: calc(0.6*var(--rvv));
     font-size: calc(0.8*var(--rvv));
 }
 
-.inline-newsletter {
+.inline-link {
     cursor: pointer;
     text-decoration: underline;
     font-weight: bold;
 }
 
 @media only screen and (min-width: 750px) {
-    .inline-newsletter:hover {
+    .inline-link:hover {
         font-style: italic;
     }
 }
