@@ -53,6 +53,19 @@ function hideNav() {
     nav.classList.add('hide');
 }
 
+function selectNav(page) {
+    // clear selection class from all nav buttons:
+    const navButtons = document.querySelectorAll('.nav-button');
+    navButtons.forEach(button => {
+        button.classList.remove('nav-selected');
+    });
+    // add selection class to the intended nav button:
+    const selectedNavButton = document.querySelector(`.nav-${page}`);
+    if (selectedNavButton) {
+        selectedNavButton.classList.add('nav-selected');
+    }
+}
+
 function storeHomeHtml() {
     const homeMain = document.querySelector('.main');
     const homeHtml = homeMain.innerHTML;
@@ -68,32 +81,43 @@ function appendComingSoon(parent) {
 }
 
 function renderHome() {
+    // clear selection styling from nav buttons, then hide the nav bar:
+    selectNav('');
     hideNav();
 
+    // load home stylesheet:
     const stylesheet = document.querySelector('.page-stylesheet');
     stylesheet.setAttribute('href', 'css/home.css');
 
+    // if the home html is stored in localStorage, use it to update the main content section:
     const main = document.querySelector('.main');
     if (localStorage.getItem('homeHtml')) {
         const homeHtml = localStorage.getItem('homeHtml');
         main.innerHTML = homeHtml;
+    // if it's not stored, just reload the site:
     } else {
         location.reload();
     }
     
+    // add click listeners to the big buttons:
     addHomeListeners();
 }
 
 
 function renderMenuPage() {
+    // apply selection style to the 'menu' button, then hide the nav bar:
+    selectNav('menu');
     hideNav();
 
+    // load menu page stylesheet:
     const stylesheet = document.querySelector('.page-stylesheet');
     stylesheet.setAttribute('href', 'css/menu.css');
     
+    // clear out main content section:
     const main = document.querySelector('.main');
     main.innerHTML = '';
 
+    // render the menu using jpg files of handwritten title & menu items:
     const menuTitle = document.createElement('img');
     menuTitle.classList.add('menu-title');
     menuTitle.setAttribute('src', 'img/current-menu.jpg');
@@ -117,18 +141,22 @@ function renderMenuPage() {
         newItem.setAttribute('alt', `${item}`);
         main.appendChild(newItem);
     });
-
 }
 
 function renderEventsPage() {
+    // add selection style to the 'events' button, then hide the nav bar:
+    selectNav('events');
     hideNav();
 
+    // load events stylesheet:
     const stylesheet = document.querySelector('.page-stylesheet');
     stylesheet.setAttribute('href', 'css/events.css');
 
+    // clear out main content section:
     const main = document.querySelector('.main');
     main.innerHTML = '';
 
+    // create events-main div within main content section:
     const eventsMain = document.createElement('div');
     eventsMain.classList.add('events-main');
     main.appendChild(eventsMain);
@@ -137,31 +165,37 @@ function renderEventsPage() {
 }
 
 function renderContactPage() {
+    // add selection style to the 'contact' button, then hide the nav bar:
+    selectNav('contact');
     hideNav();
 
+    // load contact page stylesheet:
     const stylesheet = document.querySelector('.page-stylesheet');
     stylesheet.setAttribute('href', 'css/contact.css');
 
+    // clear out main content div:
     const main = document.querySelector('.main');
     main.innerHTML = '';
 
+    // create contact-main div within main content section:
     const contactMain = document.createElement('div');
     contactMain.classList.add('contact-main');
     main.appendChild(contactMain);
 
+    // create contact-text div & child divs for paragraphs:
     const contactText = document.createElement('div');
     contactText.classList.add('contact-text');
     contactMain.appendChild(contactText);
 
-    const inquiries = document.createElement('div');
-    inquiries.classList.add('inquiries');
-    inquiries.innerHTML = `for inquiries, please email <span class="graces-web-portal">letsgotograces@gmail.com</span>.`;
-    contactText.appendChild(inquiries);
+        const inquiries = document.createElement('div');
+        inquiries.classList.add('inquiries');
+        inquiries.innerHTML = `for inquiries, please email <span class="graces-web-portal">letsgotograces@gmail.com</span>.`;
+        contactText.appendChild(inquiries);
 
-    const comingNext = document.createElement('div');
-    comingNext.classList.add('coming-next');
-    comingNext.innerHTML = `to find out what we<span class="apostrophe">'</span>re up to next, sign up for our newsletter <span class="inline-link graces-web-portal" onclick="sendToMailchimp()">here</span>.`;
-    contactText.appendChild(comingNext);
+        const comingNext = document.createElement('div');
+        comingNext.classList.add('coming-next');
+        comingNext.innerHTML = `to find out what we<span class="apostrophe">'</span>re up to next, sign up for our newsletter <span class="inline-link graces-web-portal" onclick="sendToMailchimp()">here</span>.`;
+        contactText.appendChild(comingNext);
 }
 
 function sendToMailchimp() {
@@ -169,21 +203,27 @@ function sendToMailchimp() {
 }
 
 function renderAboutPage() {
+    // add selection style to the 'about' button, then hide the nav bar:
+    selectNav('about');
     hideNav();
 
+    // load stylesheet for about page:
     const stylesheet = document.querySelector('.page-stylesheet');
     stylesheet.setAttribute('href', 'css/about.css');
 
+    // clear out main content section:
     const main = document.querySelector('.main');
     main.innerHTML = '';
 
+    // create about-ain div within main content section:
     const aboutMain = document.createElement('div');
     aboutMain.classList.add('about-main');
     main.appendChild(aboutMain);
 
+    // create div for about text:
     const aboutText = document.createElement('div');
     aboutText.classList.add('about-text');
-    aboutText.innerHTML = 'graces is a food pop-up in bucks county, PA, serving up mid-atlantic by midwest sandwiches, salads, pastries, and more. <span class="apostrophe">:)</span>';
+    aboutText.innerHTML = 'graces is a food pop-up in bucks county, PA, serving up mid-atlantic by midwest sandwiches, salads, pastries, pasta, and more. <span class="apostrophe">:)</span>';
     aboutMain.appendChild(aboutText);
 }
 

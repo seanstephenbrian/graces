@@ -221,6 +221,10 @@ header .logo-container {
     margin-right: calc(0.4*var(--rvv));
 }
 
+.nav-selected {
+    filter: hue-rotate(90deg);
+}
+
 .nav-close {
     position: relative;
     min-height: var(--close-icon);
