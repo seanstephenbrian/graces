@@ -115,6 +115,9 @@ function renderHome() {
 
 
 function renderMenuPage() {
+    // set body height:
+    setBodyHeight();
+
     // apply selection style to the 'menu' button, then hide the nav bar:
     selectNav('menu');
     hideNav();
@@ -154,6 +157,9 @@ function renderMenuPage() {
 }
 
 function renderEventsPage() {
+    // set body height:
+    setBodyHeight();
+
     // add selection style to the 'events' button, then hide the nav bar:
     selectNav('events');
     hideNav();
@@ -175,6 +181,9 @@ function renderEventsPage() {
 }
 
 function renderContactPage() {
+    // set body height:
+    setBodyHeight();
+
     // add selection style to the 'contact' button, then hide the nav bar:
     selectNav('contact');
     hideNav();
@@ -213,6 +222,9 @@ function sendToMailchimp() {
 }
 
 function renderAboutPage() {
+    // set body height:
+    setBodyHeight();
+    
     // add selection style to the 'about' button, then hide the nav bar:
     selectNav('about');
     hideNav();
