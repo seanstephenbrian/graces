@@ -2,13 +2,20 @@ window.addEventListener('DOMContentLoaded', addInitialListeners);
 window.addEventListener('DOMContentLoaded', storeHomeHtml);
 window.addEventListener('DOMContentLoaded', setBodyHeight);
 
-// set body min-height to inner window height 
-//  to ensure that mobile users see the footer:
+
 function setBodyHeight() {
+    // set body min-height & body height to inner window height to ensure that mobile users see the footer:
     const windowHeight = window.innerHeight + "px";
     document.body.style.minHeight = windowHeight;
-    const wrapper = document.querySelector('.wrapper');
-    wrapper.style.minHeight = windowHeight
+    document.body.style.height = windowHeight;
+    // empty maxHeight style in case it is unnecessary on current page:
+    document.body.style.maxHeight = '';
+}
+
+function setBodyMaxHeight() {
+    // set body max-height so there's not empty space on contact & about pages:
+    const windowHeight = window.innerHeight + "px";
+    document.body.style.maxHeight = windowHeight;
 }
   
 function addInitialListeners() {
@@ -183,6 +190,7 @@ function renderEventsPage() {
 function renderContactPage() {
     // set body height:
     setBodyHeight();
+    setBodyMaxHeight();
 
     // add selection style to the 'contact' button, then hide the nav bar:
     selectNav('contact');
@@ -224,7 +232,8 @@ function sendToMailchimp() {
 function renderAboutPage() {
     // set body height:
     setBodyHeight();
-    
+    setBodyMaxHeight();
+
     // add selection style to the 'about' button, then hide the nav bar:
     selectNav('about');
     hideNav();
