@@ -297,6 +297,9 @@ footer .logo {
 .footer-divider {
     margin: 0 calc(var(--rvv));
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer-divider img {

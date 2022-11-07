@@ -216,7 +216,7 @@ function renderContactPage() {
 
         const inquiries = document.createElement('div');
         inquiries.classList.add('inquiries');
-        inquiries.innerHTML = `for inquiries, please email <span class="graces-web-portal">letsgotograces@gmail.com</span>.`;
+        inquiries.innerHTML = `for inquiries, please email <a href="mailto:letsgotograces@gmail.com" class="graces-web-portal graces-email">letsgotograces@gmail.com</a>.`;
         contactText.appendChild(inquiries);
 
         const comingNext = document.createElement('div');
