@@ -1,6 +1,16 @@
 window.addEventListener('DOMContentLoaded', addInitialListeners);
 window.addEventListener('DOMContentLoaded', storeHomeHtml);
+window.addEventListener('DOMContentLoaded', setBodyHeight);
 
+// set body min-height to inner window height 
+//  to ensure that mobile users see the footer:
+function setBodyHeight() {
+    const windowHeight = window.innerHeight + "px";
+    document.body.style.minHeight = windowHeight;
+    const wrapper = document.querySelector('.wrapper');
+    wrapper.style.minHeight = windowHeight
+}
+  
 function addInitialListeners() {
     // add click listener to header icons:
     const headerLogo = document.querySelector('.header-logo');
