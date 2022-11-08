@@ -64,7 +64,8 @@ a:focus {
 
 html,
 body {
-    min-width: 100vw;
+    min-width: 100%;
+    max-width: 100%;
     overflow-x: hidden;
     appearance: none;
     outline: none;
@@ -83,7 +84,8 @@ body {
 .wrapper,
 .main {
     flex: auto;
-    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -92,80 +94,63 @@ body {
 
 /* header */
 
-header {
-    min-height: var(--header-footer-height);
-    min-width: 60%;
-    max-width: 80%;
-    display: grid;
-    gap: .8rem;
-    grid-template-columns: 1fr 1fr 6fr;
-    grid-template-rows: var(--header-footer-height);
-    grid-template-areas: "logo header-drawing hamburger";
-    margin-top: calc(1rem + 1vw);
-    margin-bottom: 0;
-    align-items: center;
-    justify-items: center;
-}
-
-.logo-container,
-.header-drawing-container {
-    height: 100%;
-}
-
-header .logo-container {
-    cursor: pointer;
-    grid-area: logo;
-    justify-self: end;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    padding-right: calc(0.2*var(--rvv));
-}
-
 .unclickable {
     cursor: default !important;
 }
 
-.logo {
-    height: 50%;
+header {
+    margin-top: calc(0.5*var(--rvv));
+    height: var(--header-footer-height);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: calc(0.7*var(--rvv));
     position: relative;
-    top: calc(0.2*var(--rvv));
-    transition: 0.2s ease-in-out;
+}
+
+.header-logo {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: calc(0.3*var(--rvv));
+    cursor: pointer;
+}
+
+.header-logo img {
+    max-height: 65%;
 }
 
 .header-drawing-container {
-    grid-area: header-drawing;
-    justify-self: start;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: calc(0.2*var(--rvv));
 }
 
-.header-drawing {
-    height: 70%;
+.header-drawing-container img {
+    max-height: 75%;
 }
 
 .hamburger-container {
-    grid-area: hamburger;
-    height: calc(var(--rvv));
-    width: calc(var(--rvv));
-    justify-self: end;
-    align-self: center;
-    cursor: pointer;
-    background-color: var(--egg);
-    padding: calc(0.3*var(--rvv));
-    border-radius: 50%;
-    box-shadow: 0 0 15px var(--pink-glow);
-    border: 1px solid black;
+    margin-left: 30vw;
+    height: 70%;
+    aspect-ratio: 1 / 1;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    background-color: var(--egg);
+    padding: calc(0.1*var(--rvv));
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--pink-glow);
+    border: 1px solid black;
 }
 
-.hamburger {
-    height: calc(var(--rvv));
+.hamburger-container img {
+    height: 70%;
 }
 
 /* nav bar: */
@@ -321,7 +306,11 @@ footer .logo {
         font-size: calc(0.8*var(--rvv));
     }
 
-    header .logo:hover {
+    .header-logo {
+        transition: 0.1s ease-in-out;
+    }
+
+    .header-logo:hover {
         transform: scale(1.2);
     }
 
