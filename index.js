@@ -340,10 +340,12 @@ function renderHome() {
     addHomeListeners();
 }
 
-    // method to remove 'unclickable' class from header logo:
+    // method to remove 'unclickable' class from header logo (if it exists):
     function showPointerOnLogo() {
         const unclickableLogo = document.querySelector('.unclickable');
-        unclickableLogo.classList.remove('unclickable');
+        if (unclickableLogo) {
+            unclickableLogo.classList.remove('unclickable');
+        }
     }
 
 function renderMenuPage() {
