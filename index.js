@@ -1,9 +1,13 @@
-loadStylesheets();
-renderInitialElements();
-addInitialListeners();
-renderHome();
-setBodyHeight();
-window.addEventListener('resize', setBodyHeight);
+window.addEventListener('DOMContentLoaded', runInitialFunctions);
+
+function runInitialFunctions() {
+    loadStylesheets();
+    renderInitialElements();
+    addInitialListeners();
+    renderHome();
+    setBodyHeight();
+    window.addEventListener('resize', setBodyHeight);
+}
 
 function renderInitialElements() {
     createWrapper();
