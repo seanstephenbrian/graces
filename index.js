@@ -1,6 +1,6 @@
-window.addEventListener('DOMContentLoaded', addInitialListeners);
-window.addEventListener('DOMContentLoaded', renderHome);
-window.addEventListener('DOMContentLoaded', setBodyHeight);
+addInitialListeners();
+renderHome();
+setBodyHeight();
 
 function setBodyHeight() {
     // set body min-height & body height to inner window height to ensure that mobile users see the footer:
