@@ -1,7 +1,6 @@
 window.addEventListener('DOMContentLoaded', addInitialListeners);
-window.addEventListener('DOMContentLoaded', storeHomeHtml);
+window.addEventListener('DOMContentLoaded', renderHome);
 window.addEventListener('DOMContentLoaded', setBodyHeight);
-
 
 function setBodyHeight() {
     // set body min-height & body height to inner window height to ensure that mobile users see the footer:
@@ -19,13 +18,14 @@ function setBodyMaxHeight() {
 }
   
 function addInitialListeners() {
-    // add click listener to header icons:
+
+    // header listeners:
     const headerLogo = document.querySelector('.header-logo');
     headerLogo.addEventListener('click', renderHome);
     const hamburger = document.querySelector('.hamburger-container');
     hamburger.addEventListener('click', showNav);
 
-    // add click listeners to nav buttons:
+    // nav listeners:
     const menuButton = document.querySelector('.nav-menu');
     menuButton.addEventListener('click', renderMenuPage);
     const eventsButton = document.querySelector('.nav-events');
@@ -39,15 +39,15 @@ function addInitialListeners() {
     const closeButton = document.querySelector('.nav-close');
     closeButton.addEventListener('click', hideNav);
 
-    addHomeListeners();
+    // footer listeners:
 
-    // add click listener to bottom 'graces' logo to scroll to top of page:
-    const footerLogo = document.querySelector('.footer-logo');
-    footerLogo.addEventListener('click', scrollUp);
+        // add click listener to bottom 'graces' logo to scroll to top of page:
+        const footerLogo = document.querySelector('.footer-logo');
+        footerLogo.addEventListener('click', scrollUp);
 
-    // add click listener to instagram icon:
-    const insta = document.querySelector('.insta-container');
-    insta.addEventListener('click', sendToInsta);
+        // add click listener to instagram icon:
+        const insta = document.querySelector('.insta-container');
+        insta.addEventListener('click', sendToInsta);
 }
 
 function addHomeListeners() {
@@ -83,20 +83,6 @@ function selectNav(page) {
     }
 }
 
-function storeHomeHtml() {
-    const homeMain = document.querySelector('.main');
-    const homeHtml = homeMain.innerHTML;
-    localStorage.setItem('homeHtml', homeHtml);
-}
-
-function appendComingSoon(parent) {
-    const comingSoon = document.createElement('img');
-    comingSoon.classList.add('coming-soon');
-    comingSoon.setAttribute('src', 'img/coming-soon.jpg');
-    comingSoon.setAttribute('alt', 'coming soon');
-    parent.appendChild(comingSoon);
-}
-
 function renderHome() {
     // clear selection styling from nav buttons, then hide the nav bar:
     selectNav('');
@@ -106,18 +92,86 @@ function renderHome() {
     const stylesheet = document.querySelector('.page-stylesheet');
     stylesheet.setAttribute('href', 'css/home.css');
 
-    // if the home html is stored in localStorage, use it to update the main content section:
+    // clear the main content section, then render the homepage:
     const main = document.querySelector('.main');
-    if (localStorage.getItem('homeHtml')) {
-        const homeHtml = localStorage.getItem('homeHtml');
-        main.innerHTML = homeHtml;
-    // if it's not stored, just reload the site:
-    } else {
-        location.reload();
-    }
-    
-    // add click listeners to the big buttons:
+    main.innerHTML = '';
+
+        const intro = document.createElement('div');
+        intro.classList.add('intro');
+        main.appendChild(intro);
+
+            const hello = document.createElement('div');
+            hello.classList.add('hello');
+            hello.innerHTML =  `hello and welcome to the <span class="graces-web-portal">Graces Web Portal</span>.`;
+            intro.appendChild(hello);
+
+            const seasons = document.createElement('div');
+            seasons.classList.add('seasons');
+            seasons.innerHTML = `we<span class="apostrophe">'</span>re cooking with the seasons in bucks county, pennsylvania.`;
+            intro.appendChild(seasons);
+
+            const eat = document.createElement('div');
+            eat.classList.add('eat');
+            eat.textContent = 'if you want to eat, we want to feed you!'
+            intro.appendChild(eat);
+
+        const contact = document.createElement('div');
+        contact.classList.add('contact');
+        main.appendChild(contact);
+
+            const contactDrawingContainer = document.createElement('div');
+            contactDrawingContainer.classList.add('contact-drawing-container');
+            contact.appendChild(contactDrawingContainer);
+
+                const contactDrawing = document.createElement('img');
+                contactDrawing.classList.add('contact-drawing');
+                contactDrawing.setAttribute('src', 'img/contact-drawing.jpg');
+                contactDrawingContainer.appendChild(contactDrawing);
+
+            const contactButton = document.createElement('div');
+            contactButton.classList.add('contact-button');
+            contactButton.textContent = 'contact us';
+            contact.appendChild(contactButton);
+
+        const menu = document.createElement('div');
+        menu.classList.add('menu');
+        main.appendChild(menu);
+
+            const menuButton = document.createElement('div');
+            menuButton.classList.add('menu-button');
+            menuButton.textContent = `today's menu`;
+            menu.appendChild(menuButton);
+
+            const menuDrawingContainer = document.createElement('div');
+            menuDrawingContainer.classList.add('menu-drawing-container');
+            menu.appendChild(menuDrawingContainer);
+
+                const menuDrawing = document.createElement('img');
+                menuDrawing.classList.add('menu-drawing');
+                menuDrawing.setAttribute('src', 'img/menu-drawing.jpg');
+                menuDrawingContainer.appendChild(menuDrawing);
+
+        const newsletter = document.createElement('div');
+        newsletter.classList.add('newsletter');
+        main.appendChild(newsletter);
+
+            const newsletterDrawingContainer = document.createElement('div');
+            newsletterDrawingContainer.classList.add('newsletter-drawing-container');
+            newsletter.appendChild(newsletterDrawingContainer);
+
+                const newsletterDrawing = document.createElement('img');
+                newsletterDrawing.classList.add('newsletter-drawing');
+                newsletterDrawing.setAttribute('src', 'img/newsletter-drawing.jpg');
+                newsletterDrawingContainer.appendChild(newsletterDrawing);
+
+            const newsletterButton = document.createElement('div');
+            newsletterButton.classList.add('newsletter-button');
+            newsletterButton.textContent = 'newsletter sign-up';
+            newsletter.appendChild(newsletterButton);
+
+    // add click listeners to the buttons:
     addHomeListeners();
+
 }
 
 
@@ -265,4 +319,13 @@ function scrollUp() {
 
 function sendToInsta() {
     window.open('https://www.instagram.com/graces_PA/', '_blank');
+}
+
+// in case we need to have a page read 'coming soon':
+function appendComingSoon(parent) {
+    const comingSoon = document.createElement('img');
+    comingSoon.classList.add('coming-soon');
+    comingSoon.setAttribute('src', 'img/coming-soon.jpg');
+    comingSoon.setAttribute('alt', 'coming soon');
+    parent.appendChild(comingSoon);
 }
