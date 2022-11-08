@@ -1,3 +1,4 @@
+loadStylesheets();
 renderInitialElements();
 addInitialListeners();
 renderHome();
@@ -154,7 +155,29 @@ function renderFooter() {
             const instaIcon = document.createElement('img');
             instaIcon.setAttribute('src', 'img/instagram.svg');
             insta.appendChild(instaIcon);
+}
 
+function loadStylesheets() {
+    const head = document.querySelector('head');
+
+    // load main stylesheet:
+    const mainStylesheet = document.createElement('link');
+    mainStylesheet.classList.add('main-stylesheet');
+    mainStylesheet.setAttribute('rel', 'stylesheet');
+    mainStylesheet.setAttribute('href', 'css/main.css');
+    head.appendChild(mainStylesheet);
+
+    // create element for page-specific stylesheets:
+    const pageStylesheet = document.createElement('link');
+    pageStylesheet.classList.add('page-stylesheet');
+    pageStylesheet.setAttribute('rel', 'stylesheet');
+    pageStylesheet.setAttribute('href', '');
+    head.appendChild(pageStylesheet);
+}
+
+function loadPageStylesheet(page) {
+    const stylesheet = document.querySelector('.page-stylesheet');
+    stylesheet.setAttribute('href', `css/${page}.css`);
 }
 
 function setBodyHeight() {
@@ -243,9 +266,7 @@ function renderHome() {
     selectNav('');
     hideNav();
 
-    // load home stylesheet:
-    const stylesheet = document.querySelector('.page-stylesheet');
-    stylesheet.setAttribute('href', 'css/home.css');
+    loadPageStylesheet('home');
 
     // clear the main content section, then render the homepage:
     const main = document.querySelector('.main');
@@ -338,9 +359,7 @@ function renderMenuPage() {
     selectNav('menu');
     hideNav();
 
-    // load menu page stylesheet:
-    const stylesheet = document.querySelector('.page-stylesheet');
-    stylesheet.setAttribute('href', 'css/menu.css');
+    loadPageStylesheet('menu');
     
     // clear out main content section:
     const main = document.querySelector('.main');
@@ -380,9 +399,7 @@ function renderEventsPage() {
     selectNav('events');
     hideNav();
 
-    // load events stylesheet:
-    const stylesheet = document.querySelector('.page-stylesheet');
-    stylesheet.setAttribute('href', 'css/events.css');
+    loadPageStylesheet('events');
 
     // clear out main content section:
     const main = document.querySelector('.main');
@@ -405,9 +422,7 @@ function renderContactPage() {
     selectNav('contact');
     hideNav();
 
-    // load contact page stylesheet:
-    const stylesheet = document.querySelector('.page-stylesheet');
-    stylesheet.setAttribute('href', 'css/contact.css');
+    loadPageStylesheet('contact');
 
     // clear out main content div:
     const main = document.querySelector('.main');
@@ -447,9 +462,7 @@ function renderAboutPage() {
     selectNav('about');
     hideNav();
 
-    // load stylesheet for about page:
-    const stylesheet = document.querySelector('.page-stylesheet');
-    stylesheet.setAttribute('href', 'css/about.css');
+    loadPageStylesheet('about');
 
     // clear out main content section:
     const main = document.querySelector('.main');
