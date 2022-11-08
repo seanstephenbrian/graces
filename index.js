@@ -1,22 +1,17 @@
-window.addEventListener('DOMContentLoaded', runInitialFunctions);
-
-function runInitialFunctions() {
-    loadStylesheets();
-    renderInitialElements();
-    addInitialListeners();
-    renderHome();
-    setBodyHeight();
-    window.addEventListener('resize', setBodyHeight);
-}
-
-function renderInitialElements() {
+(function () {
     createWrapper();
     renderHeader();
     renderNav();
     hideNav();
     createMain();
     renderFooter();
-}
+    addInitialListeners();
+    renderHome();
+    setBodyHeight();
+    window.addEventListener('resize', setBodyHeight);
+})();
+
+// create initial/fixed page elements:
 
 function createWrapper() {
     const body = document.querySelector('body');
@@ -107,6 +102,30 @@ function renderNav() {
                 navClose.appendChild(closeIcon);
 }
 
+    // nav-related methods:
+    function showNav() {
+        const nav = document.querySelector('.nav');
+        nav.classList.remove('hide');
+    }
+
+    function hideNav() {
+        const nav = document.querySelector('.nav');
+        nav.classList.add('hide');
+    }
+
+    function selectNav(page) {
+        // clear selection class from all nav buttons:
+        const navButtons = document.querySelectorAll('.nav-button');
+        navButtons.forEach(button => {
+            button.classList.remove('nav-selected');
+        });
+        // add selection class to the specified nav button:
+        const selectedNavButton = document.querySelector(`.nav-${page}`);
+        if (selectedNavButton) {
+            selectedNavButton.classList.add('nav-selected');
+        }
+    }
+
 function createMain() {
     const wrapper = document.querySelector('.wrapper');
 
@@ -161,44 +180,29 @@ function renderFooter() {
             insta.appendChild(instaIcon);
 }
 
-function loadStylesheets() {
-    const head = document.querySelector('head');
-
-    // load main stylesheet:
-    const mainStylesheet = document.createElement('link');
-    mainStylesheet.classList.add('main-stylesheet');
-    mainStylesheet.setAttribute('rel', 'stylesheet');
-    mainStylesheet.setAttribute('href', 'css/main.css');
-    head.appendChild(mainStylesheet);
-
-    // create element for page-specific stylesheets:
-    const pageStylesheet = document.createElement('link');
-    pageStylesheet.classList.add('page-stylesheet');
-    pageStylesheet.setAttribute('rel', 'stylesheet');
-    pageStylesheet.setAttribute('href', '');
-    head.appendChild(pageStylesheet);
-}
-
+// method to load page-specific stylesheets into the existing page stylesheet element:
 function loadPageStylesheet(page) {
     const stylesheet = document.querySelector('.page-stylesheet');
     stylesheet.setAttribute('href', `css/${page}.css`);
 }
 
+// method to dynamically set body height, ensuring that mobile users see the footer:
 function setBodyHeight() {
-    // set body min-height & body height to inner window height to ensure that mobile users see the footer:
+    // set body min-height & body height to inner window height:
     const windowHeight = window.innerHeight + "px";
     document.body.style.minHeight = windowHeight;
     document.body.style.height = windowHeight;
-    // empty maxHeight style in case it is unnecessary for current page:
+    // empty maxHeight style in case it is unnecessary for the current page:
     document.body.style.maxHeight = '';
 }
 
+// set body max-height (this ensures there's not empty space on contact & about pages):
 function setBodyMaxHeight() {
-    // set body max-height so there's not empty space on contact & about pages:
     const windowHeight = window.innerHeight + "px";
     document.body.style.maxHeight = windowHeight;
 }
-  
+
+// functions to add page listeners:
 function addInitialListeners() {
 
     // header listeners:
@@ -242,33 +246,16 @@ function addHomeListeners() {
     newsletterButton.addEventListener('click', sendToMailchimp);
 }
 
-function showNav() {
-    const nav = document.querySelector('.nav');
-    nav.classList.remove('hide');
-}
-
-function hideNav() {
-    const nav = document.querySelector('.nav');
-    nav.classList.add('hide');
-}
-
-function selectNav(page) {
-    // clear selection class from all nav buttons:
-    const navButtons = document.querySelectorAll('.nav-button');
-    navButtons.forEach(button => {
-        button.classList.remove('nav-selected');
-    });
-    // add selection class to the intended nav button:
-    const selectedNavButton = document.querySelector(`.nav-${page}`);
-    if (selectedNavButton) {
-        selectedNavButton.classList.add('nav-selected');
-    }
-}
+// page render functions:
 
 function renderHome() {
     // clear selection styling from nav buttons, then hide the nav bar:
     selectNav('');
     hideNav();
+
+    // make the 'graces' header logo unclickable:
+    const headerLogo = document.querySelector('.header-logo');
+    headerLogo.classList.add('unclickable');
 
     loadPageStylesheet('home');
 
@@ -351,9 +338,13 @@ function renderHome() {
 
     // add click listeners to the buttons:
     addHomeListeners();
-
 }
 
+    // method to remove 'unclickable' class from header logo:
+    function showPointerOnLogo() {
+        const unclickableLogo = document.querySelector('.unclickable');
+        unclickableLogo.classList.remove('unclickable');
+    }
 
 function renderMenuPage() {
     // set body height:
@@ -362,6 +353,9 @@ function renderMenuPage() {
     // apply selection style to the 'menu' button, then hide the nav bar:
     selectNav('menu');
     hideNav();
+
+    // show pointer cursor on 'graces' logo in header:
+    showPointerOnLogo();
 
     loadPageStylesheet('menu');
     
@@ -403,6 +397,9 @@ function renderEventsPage() {
     selectNav('events');
     hideNav();
 
+    // show pointer cursor on 'graces' logo in header:
+    showPointerOnLogo();
+
     loadPageStylesheet('events');
 
     // clear out main content section:
@@ -425,6 +422,9 @@ function renderContactPage() {
     // add selection style to the 'contact' button, then hide the nav bar:
     selectNav('contact');
     hideNav();
+
+    // show pointer cursor on 'graces' logo in header:
+    showPointerOnLogo();
 
     loadPageStylesheet('contact');
 
@@ -453,10 +453,6 @@ function renderContactPage() {
         contactText.appendChild(comingNext);
 }
 
-function sendToMailchimp() {
-    window.open('https://mailchi.mp/56e44903e4bd/graces-email-newsletter', '_blank');
-}
-
 function renderAboutPage() {
     // set body height:
     setBodyHeight();
@@ -465,6 +461,9 @@ function renderAboutPage() {
     // add selection style to the 'about' button, then hide the nav bar:
     selectNav('about');
     hideNav();
+
+    // show pointer cursor on 'graces' logo in header:
+    showPointerOnLogo();
 
     loadPageStylesheet('about');
 
@@ -484,9 +483,14 @@ function renderAboutPage() {
     aboutMain.appendChild(aboutText);
 }
 
+// miscellaneous necessary page functions:
 function scrollUp() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
+}
+
+function sendToMailchimp() {
+    window.open('https://mailchi.mp/56e44903e4bd/graces-email-newsletter', '_blank');
 }
 
 function sendToInsta() {
