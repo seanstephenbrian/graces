@@ -1,6 +1,160 @@
+renderInitialElements();
 addInitialListeners();
 renderHome();
 setBodyHeight();
+
+function renderInitialElements() {
+    createWrapper();
+    renderHeader();
+    renderNav();
+    hideNav();
+    createMain();
+    renderFooter();
+}
+
+function createWrapper() {
+    const body = document.querySelector('body');
+
+    const wrapper = document.createElement('div');
+    wrapper.classList.add('wrapper');
+    body.appendChild(wrapper);
+}
+
+function renderHeader() {
+    const wrapper = document.querySelector('.wrapper');
+
+    const header = document.createElement('header');
+    wrapper.appendChild(header);
+
+        const headerLogo = document.createElement('div');
+        headerLogo.classList.add('header-logo', 'logo-container');
+        header.appendChild(headerLogo);
+
+            const headerLogoImg = document.createElement('img');
+            headerLogoImg.classList.add('logo');
+            headerLogoImg.setAttribute('src', 'img/logo.jpg');
+            headerLogoImg.setAttribute('alt', 'Graces');
+            headerLogo.appendChild(headerLogoImg);
+
+        const headerDrawingContainer = document.createElement('div');
+        headerDrawingContainer.classList.add('header-drawing-container');
+        header.appendChild(headerDrawingContainer);
+
+            const headerDrawing = document.createElement('img');
+            headerDrawing.classList.add('header-drawing');
+            headerDrawing.setAttribute('src', 'img/header-drawing.jpg');
+            headerDrawingContainer.appendChild(headerDrawing);
+
+        const hamburgerContainer = document.createElement('div');
+        hamburgerContainer.classList.add('hamburger-container');
+        header.appendChild(hamburgerContainer);
+
+            const hamburger = document.createElement('img');
+            hamburger.classList.add('hamburger');
+            hamburger.setAttribute('src', 'img/list.svg');
+            hamburger.setAttribute('alt', 'Menu');
+            hamburgerContainer.appendChild(hamburger);
+}
+
+function renderNav() {
+    const wrapper = document.querySelector('.wrapper');
+
+    const nav = document.createElement('div');
+    nav.classList.add('nav');
+    wrapper.appendChild(nav);
+
+        const navList = document.createElement('ul');
+        navList.classList.add('nav-list');
+        nav.appendChild(navList);
+
+            const navMenu = document.createElement('li');
+            navMenu.classList.add('nav-button', 'nav-menu');
+            navMenu.textContent = 'menu';
+            navList.appendChild(navMenu);
+
+            const navEvents = document.createElement('li');
+            navEvents.classList.add('nav-button', 'nav-events');
+            navEvents.textContent = 'events';
+            navList.appendChild(navEvents);
+
+            const navContact = document.createElement('li');
+            navContact.classList.add('nav-button', 'nav-contact');
+            navContact.textContent = 'contact';
+            navList.appendChild(navContact);
+
+            const navNewsletter = document.createElement('li');
+            navNewsletter.classList.add('nav-button', 'nav-newsletter');
+            navNewsletter.textContent = 'newsletter';
+            navList.appendChild(navNewsletter);
+
+            const navAbout = document.createElement('li');
+            navAbout.classList.add('nav-button', 'nav-about');
+            navAbout.textContent = 'about';
+            navList.appendChild(navAbout);
+
+            const navClose = document.createElement('li');
+            navClose.classList.add('nav-close');
+            navList.appendChild(navClose);
+
+                const closeIcon = document.createElement('img');
+                closeIcon.setAttribute('src', 'img/close.svg');
+                navClose.appendChild(closeIcon);
+}
+
+function createMain() {
+    const wrapper = document.querySelector('.wrapper');
+
+    const main = document.createElement('div');
+    main.classList.add('main');
+    wrapper.appendChild(main);
+}
+
+function renderFooter() {
+    const wrapper = document.querySelector('.wrapper');
+    
+    const footer = document.createElement('footer');
+    wrapper.appendChild(footer);
+
+        const logoContainer = document.createElement('div');
+        logoContainer.classList.add('logo-container', 'footer-logo');
+        footer.appendChild(logoContainer);
+
+            const logo = document.createElement('img');
+            logo.classList.add('logo');
+            logo.setAttribute('src', 'img/logo.jpg');
+            logo.setAttribute('alt', 'Graces');
+            logoContainer.appendChild(logo);
+
+        const footerDivider1 = document.createElement('div');
+        footerDivider1.classList.add('footer-divider');
+        footer.appendChild(footerDivider1);
+
+            const footerDrawing1 = document.createElement('img');
+            footerDrawing1.setAttribute('src', 'img/footer-drawing.jpg');
+            footerDivider1.appendChild(footerDrawing1);
+
+        const doyle = document.createElement('div');
+        doyle.classList.add('doyle');
+        doyle.textContent = 'doylestown, PA';
+        footer.appendChild(doyle);
+
+        const footerDivider2 = document.createElement('div');
+        footerDivider2.classList.add('footer-divider');
+        footer.appendChild(footerDivider2);
+
+            const footerDrawing2 = document.createElement('img');
+            footerDrawing2.setAttribute('src', 'img/footer-drawing.jpg');
+            footerDivider2.appendChild(footerDrawing2);
+
+        const insta = document.createElement('div');
+        insta.classList.add('insta-container');
+        footer.appendChild(insta);
+
+            const instaIcon = document.createElement('img');
+            instaIcon.setAttribute('src', 'img/instagram.svg');
+            insta.appendChild(instaIcon);
+
+}
 
 function setBodyHeight() {
     // set body min-height & body height to inner window height to ensure that mobile users see the footer:
