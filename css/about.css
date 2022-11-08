@@ -12,7 +12,7 @@
 .about-text {
     text-align: center;
     position: relative;
-    bottom: 10vh;
+    bottom: 7vh;
     font-size: calc(0.8*var(--rvv));
     width: 60vw;
 }

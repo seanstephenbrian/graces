@@ -2,6 +2,7 @@ renderInitialElements();
 addInitialListeners();
 renderHome();
 setBodyHeight();
+window.addEventListener('resize', setBodyHeight);
 
 function renderInitialElements() {
     createWrapper();
@@ -161,7 +162,7 @@ function setBodyHeight() {
     const windowHeight = window.innerHeight + "px";
     document.body.style.minHeight = windowHeight;
     document.body.style.height = windowHeight;
-    // empty maxHeight style in case it is unnecessary on current page:
+    // empty maxHeight style in case it is unnecessary for current page:
     document.body.style.maxHeight = '';
 }
 
