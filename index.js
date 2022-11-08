@@ -1,16 +1,3 @@
-(function () {
-    createWrapper();
-    renderHeader();
-    renderNav();
-    hideNav();
-    createMain();
-    renderFooter();
-    addInitialListeners();
-    renderHome();
-    setBodyHeight();
-    window.addEventListener('resize', setBodyHeight);
-})();
-
 // create initial/fixed page elements:
 
 function createWrapper() {
@@ -200,6 +187,14 @@ function setBodyHeight() {
 function setBodyMaxHeight() {
     const windowHeight = window.innerHeight + "px";
     document.body.style.maxHeight = windowHeight;
+}
+
+// re-adjust body height if the screen orientation changes:
+function detectOrientationChange() {
+    const portrait = window.matchMedia("(orientation: portrait)");
+    portrait.addEventListener("change", setBodyHeight);
+    const landscape = window.matchMedia("(orientation: landscape)");
+    landscape.addEventListener("change", setBodyHeight);
 }
 
 // functions to add page listeners:
@@ -507,3 +502,16 @@ function appendComingSoon(parent) {
     comingSoon.setAttribute('alt', 'coming soon');
     parent.appendChild(comingSoon);
 }
+
+createWrapper();
+renderHeader();
+renderNav();
+hideNav();
+createMain();
+renderFooter();
+addInitialListeners();
+renderHome();
+setBodyHeight();
+detectOrientationChange();
+window.addEventListener('resize', setBodyHeight);
+window.addEventListener('orientationchange', setBodyHeight);

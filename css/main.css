@@ -120,7 +120,7 @@ header {
 }
 
 .header-logo img {
-    max-height: 65%;
+    max-height: 50%;
 }
 
 .header-drawing-container {
@@ -131,7 +131,7 @@ header {
 }
 
 .header-drawing-container img {
-    max-height: 75%;
+    max-height: 60%;
 }
 
 .hamburger-container {
