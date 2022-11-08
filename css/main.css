@@ -255,7 +255,7 @@ footer .logo-container {
     height: calc(var(--header-footer-height) / 3);
     cursor: pointer;
     position: relative;
-    top: calc(-0.1*var(--rvv))
+    top: calc(0.16*var(--rvv))
 }
 
 footer .logo {
@@ -307,11 +307,11 @@ footer .logo {
     }
 
     .header-logo {
-        transition: 0.1s ease-in-out;
+        /* transition: 0.1s ease-in-out; */
     }
 
     .header-logo:hover {
-        transform: scale(1.2);
+        transform: scale(1.1) rotate(-20deg);
     }
 
     .header-drawing {
@@ -347,11 +347,11 @@ footer .logo {
     }
 
     .insta-container {
-        transition: .3s ease-in-out;
+        transition: .2s ease-in-out;
     }
 
     .insta-container:hover {
-        transform: scale(1.5);
+        transform: scale(1.2);
     }
 
     .nav li:last-child {
