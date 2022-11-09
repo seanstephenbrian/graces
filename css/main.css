@@ -344,12 +344,12 @@ footer .logo {
         color: var(--orange-glow);
     }
 
-    .nav-close img {
-        transition: 0.7s;
+    .nav-close {
+        transition: 0.2s ease-in-out;
     }
 
-    .nav-close img:hover {
-        transform: rotate(5turn);
+    .nav-close:hover {
+        transform: scale(1.2);
     }
 
     footer .logo:hover {
