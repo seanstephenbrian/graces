@@ -143,6 +143,7 @@ function renderFooter() {
 
             const footerDrawing1 = document.createElement('img');
             footerDrawing1.setAttribute('src', 'img/footer-drawing.jpg');
+            footerDrawing1.classList.add('footer-drawing', 'footer-drawing-1');
             footerDivider1.appendChild(footerDrawing1);
 
         const doyle = document.createElement('div');
@@ -156,7 +157,7 @@ function renderFooter() {
 
             const footerDrawing2 = document.createElement('img');
             footerDrawing2.setAttribute('src', 'img/footer-drawing-2.jpg');
-            footerDrawing2.classList.add('footer-drawing-2');
+            footerDrawing2.classList.add('footer-drawing', 'footer-drawing-2');
             footerDivider2.appendChild(footerDrawing2);
 
         const insta = document.createElement('div');
