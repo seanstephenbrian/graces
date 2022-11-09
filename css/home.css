@@ -30,11 +30,20 @@
 .contact-drawing-container,
 .menu-drawing-container {
     height: var(--button-height);
+    display: flex;
+    align-items: center;
 }
 
-.contact-drawing,
+.contact-drawing {
+    height: 90%;
+}
+
+.menu-drawing-container {
+    margin-left: calc(0.3*var(--rvv));
+}
+
 .menu-drawing {
-    height: 100%;
+    height: 60%;
 }
 
 .contact-button,
@@ -46,6 +55,7 @@
 .contact-button,
 .menu-button,
 .newsletter-button {
+    box-sizing: border-box;
     max-height: 40vw;
     max-width: 40vw;
     border: 1px solid black;
@@ -79,13 +89,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: calc(1.7*var(--home-margin));
+    gap: calc(1.2*var(--home-margin));
     margin-bottom: calc(0.5*var(--home-margin));
     max-width: 80vw;
 }
 
 .newsletter-drawing-container {
-    width: var(--button-width);
+    width: calc(1.8*var(--button-width));
 }
 
 .newsletter-drawing {

@@ -155,7 +155,8 @@ function renderFooter() {
         footer.appendChild(footerDivider2);
 
             const footerDrawing2 = document.createElement('img');
-            footerDrawing2.setAttribute('src', 'img/footer-drawing.jpg');
+            footerDrawing2.setAttribute('src', 'img/footer-drawing-2.jpg');
+            footerDrawing2.classList.add('footer-drawing-2');
             footerDivider2.appendChild(footerDrawing2);
 
         const insta = document.createElement('div');
