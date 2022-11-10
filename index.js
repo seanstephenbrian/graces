@@ -362,30 +362,40 @@ function renderMenuPage() {
     const main = document.querySelector('.main');
     main.innerHTML = '';
 
-    // render the menu using jpg files of handwritten title & menu items:
-    const menuTitle = document.createElement('img');
-    menuTitle.classList.add('menu-title');
-    menuTitle.setAttribute('src', 'img/current-menu.jpg');
-    menuTitle.setAttribute('alt', 'current menu');
-    main.appendChild(menuTitle);
+    // menu title render:
 
-    const currentMenu = [
-        'tagliatelle',
-        'breakfast-sandwich',
-        'granola',
-        'mostaccioli',
-        'fennel-arugula-salad',
-        'beans'
-    ];
+        // // render the menu using jpg files of handwritten title & menu items:
+        // const menuTitle = document.createElement('img');
+        // menuTitle.classList.add('menu-title');
+        // menuTitle.setAttribute('src', 'img/current-menu.jpg');
+        // menuTitle.setAttribute('alt', 'current menu');
+        // main.appendChild(menuTitle);
 
-    currentMenu.forEach(item => {
-        const newItem = document.createElement('img');
-        newItem.classList.add('menu-item');
-        newItem.classList.add(`${item}`);
-        newItem.setAttribute('src', `img/menu-items/${item}.jpg`);
-        newItem.setAttribute('alt', `${item}`);
-        main.appendChild(newItem);
-    });
+    // syntax for rendering menu items:
+
+        // const currentMenu = [
+        //     'tagliatelle',
+        //     'breakfast-sandwich',
+        //     'granola',
+        //     'mostaccioli',
+        //     'fennel-arugula-salad',
+        //     'beans'
+        // ];
+
+        // currentMenu.forEach(item => {
+        //     const newItem = document.createElement('img');
+        //     newItem.classList.add('menu-item');
+        //     newItem.classList.add(`${item}`);
+        //     newItem.setAttribute('src', `img/menu-items/${item}.jpg`);
+        //     newItem.setAttribute('alt', `${item}`);
+        //     main.appendChild(newItem);
+        // });
+
+    appendComingSoon(main);   
+    const comingSoon = document.querySelector('.coming-soon');
+    comingSoon.style.marginBottom = 'auto';
+    comingSoon.style.marginTop = 'auto';
+
 }
 
 function renderEventsPage() {
