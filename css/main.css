@@ -126,7 +126,6 @@ header {
 }
 
 .header-drawing-container {
-    margin-left: 0.5rem;
     height: 100%;
     max-width: fit-content;
     display: flex;
@@ -374,5 +373,11 @@ footer .logo {
 
     .nav li:last-child {
         margin-left: -3vw;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .header-drawing-container {
+        margin-left: -0.6rem;
     }
 }
