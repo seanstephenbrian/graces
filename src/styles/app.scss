@@ -16,9 +16,13 @@
     src: url('../styles/fonts/torrefarfan/torrefarfan.ttf');
 }
 
-// global variables:
+// global variables/recurring styles:
 :root {
     --rvv: calc(1vmin + 1vmax + 1rem);
+}
+
+.apostrophe {
+    font-style: 'Josefin-Sans';
 }
 
 html, body, div, span, applet, object, iframe,
@@ -44,24 +48,19 @@ time, mark, audio, video {
 
 html {
     box-sizing: border-box;
-}
 
-body {
-    font-family: 'Torre Farfan';
-    min-height: 100vh;
-    min-width: 100vw;
-    max-width: 100vw;
-    overflow-x: hidden;
-}
+    body {
+        font-family: 'Torre Farfan';
+        min-height: 100vh;
+        min-width: 100vw;
+        max-width: 100vw;
+        overflow-x: hidden;
 
-.apostrophe {
-    font-style: 'Josefin-Sans';
-}
-
-.site-wrapper {
-    width: 100vw;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+        .site-wrapper {
+            width: 100vw;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+    }
 }

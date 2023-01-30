@@ -1,4 +1,5 @@
 .welcome-screen {
+    margin-top: calc(2*var(--rvv));
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,4 +22,12 @@
             width: 100%;
         }
     }
+}
+
+// desktop:
+@media screen and (min-width: 600px) {
+    .welcome-screen {
+        margin-top: 0;
+        align-self: center;
+    } 
 }
