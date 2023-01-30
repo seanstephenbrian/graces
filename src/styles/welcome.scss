@@ -1,0 +1,24 @@
+.welcome-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: calc(0.6*var(--rvv));
+
+    .logo-container {
+        width: 15vw;
+        max-width: 100px;
+
+        .logo-img {
+            width: 100%;
+        }
+    }
+
+    .welcome-drawing-container {
+        width: 80vw;
+        max-width: 425px;
+
+        .welcome-drawing-img {
+            width: 100%;
+        }
+    }
+}
