@@ -16,16 +16,18 @@ function App() {
     // state:
     const [onWelcomeScreen, setOnWelcomeScreen] = useState(true);
 
-    return (
-        <BrowserRouter>
-            <div className="site-wrapper">
-                {
-                    onWelcomeScreen ? 
-                    <Welcome 
-                        handleWelcomeClick={() => setOnWelcomeScreen(false)} 
-                    /> :
-                    ''
-                }
+    // render conditions:
+    let mainContent;
+    // if on welcome screen, show welcome screen :)
+    onWelcomeScreen ? 
+        mainContent = (
+            <Welcome 
+                handleWelcomeClick={() => setOnWelcomeScreen(false)} 
+            /> 
+        ) :
+        // otherwise route to the correct main content page:
+        mainContent = (
+            <>
                 <NavBar />
                 <Routes>
                     <Route 
@@ -37,6 +39,14 @@ function App() {
                         path='/about' 
                     />
                 </Routes>
+            </>
+        );
+
+    // render:
+    return (
+        <BrowserRouter>
+            <div className="site-wrapper">
+                {mainContent}
             </div>
         </BrowserRouter>
     )
