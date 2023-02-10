@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import uniqid from 'uniqid';
 
 import Flyer from '../components/Flyer';
+import PreviousText from '../img/previous.jpg';
+import UpcomingText from '../img/upcoming.jpg';
 
 import '../styles/home.scss';
 
@@ -47,13 +49,16 @@ export default function Home() {
     return (
         <div className='home-page'>
 
-            <div className='upcoming-events-title'>
-                upcoming events:
+            <div className='events-title upcoming-events-title'>
+                <img
+                    alt='upcoming events'
+                    src={UpcomingText}
+                />
             </div>
 
             {upcomingEvents.length === 0 ?
                 // text to display if there are no upcoming events:
-                <div className='no-upcoming-events'>
+                <div className='no-upcoming-events helico-blue'>
                     nothing scheduled right now, but check back soon!
                 </div>
                 // otherwise render a Flyer component for each event:
@@ -71,8 +76,11 @@ export default function Home() {
            {/* only render the previous events section if there are actually previous events: */}
            {prevEvents.length > 0 ? 
                 <>
-                    <div className='previous-events-title'>
-                        previous events:
+                    <div className='events-title previous-events-title'>
+                        <img
+                            alt='previous events'
+                            src={PreviousText}
+                        />
                     </div>
                     {prevEvents.map((event) => {
                         return (

@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // components:
 import About from './About';
+import Footer from './Footer';
 import Home from './Home';
 import NavBar from './NavBar';
 import Welcome from "./Welcome";
@@ -39,6 +40,7 @@ function App() {
                         path='/about' 
                     />
                 </Routes>
+                <Footer />
             </>
         );
 
