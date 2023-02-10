@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import uniqid from 'uniqid';
 
 import Flyer from '../components/Flyer';
 
@@ -60,6 +61,7 @@ export default function Home() {
                     return (
                         <Flyer 
                             flyerFilename={event.flyer}
+                            key={uniqid()}
                             upcoming={true}
                         />
                     )
@@ -76,6 +78,7 @@ export default function Home() {
                         return (
                             <Flyer 
                                 flyerFilename={event.flyer}
+                                key={uniqid()}
                                 upcoming={false} 
                             />
                         )
