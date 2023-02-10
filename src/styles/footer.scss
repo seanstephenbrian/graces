@@ -8,11 +8,14 @@
     .footer {
         
         .email {
-            transition: transform var(--hover-transition);
+            transition: 
+                color var(--hover-transition),
+                text-shadow var(--hover-transition);
         }
 
         .email:hover {
-            transform: scale(1.1);
+            color: rgb(0, 0, 189);
+            text-shadow: 0 0 5px red;
         }
     }
 }

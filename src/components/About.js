@@ -2,12 +2,14 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
+import '../styles/about.scss';
+
 export default function About() {
     return (
         <div className='about-page'>
             <p>
-                graces is a food pop-up in bucks county, PA, 
-                specializing in fresh pasta 'fatta a mano'.
+                graces is a food pop-up in bucks county, PA,
+                currently exploring the world of fresh pasta.
             </p>
             <p>
                 we cook with the seasons and love using

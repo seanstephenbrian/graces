@@ -16,7 +16,8 @@
     }
 
     .no-upcoming-events {
-        color: rgb(255, 111, 0);
+        color: rgb(0, 0, 189);
+        text-shadow: 0 0 5px red;
         font-size: calc(0.7*var(--rvv));
     }
 

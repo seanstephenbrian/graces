@@ -1,0 +1,36 @@
+.about-page {
+    font-family: 'Helico Centrica';
+    font-size: calc(0.7*var(--rvv));
+    padding: 0 20vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: calc(var(--rvv));
+
+    p {
+        text-align: center;
+
+        a,
+        a:visited {
+            color: blue;
+            text-shadow: 0 0 5px #2fff00;
+        }
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .about-page {
+        p {
+            a {
+                transition:
+                    color var(--hover-transition),
+                    text-shadow var(--hover-transition);
+            }
+            a:hover {
+                color: rgb(0, 0, 189);
+                text-shadow: 0 0 5px red;
+            }
+        }
+    }
+    
+}
