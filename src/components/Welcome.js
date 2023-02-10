@@ -7,15 +7,28 @@ import '../styles/welcome.scss';
 import GracesLogo from '../img/graces-logo.jpg';
 import WelcomeDrawing from '../img/welcome-drawing.jpg';
 
+export default function Welcome(props) {
+    // props:
+    const { handleWelcomeClick } = props;
 
-export default function Welcome() {
+    // render:
     return (
         <div className='welcome-screen'>
             <div className='logo-container'>
-                <img src={GracesLogo} className='logo-img' alt='graces'></img>
+                <img 
+                    alt='graces' 
+                    className='logo-img'
+                    onClick={handleWelcomeClick}
+                    src={GracesLogo}  
+                />
             </div>
             <div className='welcome-drawing-container'>
-                <img src={WelcomeDrawing} className='welcome-drawing-img' alt='graces' />
+                <img 
+                    alt='graces' 
+                    className='welcome-drawing-img'
+                    onClick={handleWelcomeClick} 
+                    src={WelcomeDrawing} 
+                />
             </div>
         </div>
     )
