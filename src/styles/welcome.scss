@@ -1,12 +1,13 @@
 $click-text-hover: 0.2s ease-in-out;
 
 .welcome-screen {
-    width: 100%;
+    width: 100vw;
     margin-top: calc(2*var(--rvv));
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: calc(0.6*var(--rvv));
+    background-color: white;
 
     .logo-container {
         width: 15vw;
