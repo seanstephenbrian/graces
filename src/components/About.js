@@ -9,7 +9,7 @@ export default function About() {
         <div className='about-page'>
             <p>
                 graces is a food pop-up in bucks county, PA,
-                currently exploring the world of fresh pasta.
+                specializing in fresh pasta.
             </p>
             <p>
                 we cook with the seasons and love using

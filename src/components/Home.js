@@ -10,6 +10,7 @@ import '../styles/home.scss';
 export default function Home() {
 
     // state:
+    const [isLoading, setIsLoading] = useState();
     const [events, setEvents] = useState([
         {
             date: '2023-02-25',
@@ -23,6 +24,7 @@ export default function Home() {
     // hooks:
     // generate previous/upcoming events arrays:
     useEffect(() => {
+        setIsLoading(true);
         let today = new Date();
         let futureEvents = [];
         let pastEvents = [];
@@ -44,6 +46,7 @@ export default function Home() {
         });
         setPrevEvents(pastEvents);
         setUpcomingEvents(futureEvents);
+        setIsLoading(false);
     }, [events]);
 
     return (
@@ -56,10 +59,10 @@ export default function Home() {
                 />
             </div>
 
-            {upcomingEvents.length === 0 ?
+            {upcomingEvents.length === 0 && isLoading === false ?
                 // text to display if there are no upcoming events:
                 <div className='no-upcoming-events helico-blue'>
-                    nothing scheduled right now, but check back soon!
+                    nothing scheduled right now... check back soon!
                 </div>
                 // otherwise render a Flyer component for each event:
                 : upcomingEvents.map((event) => {
@@ -72,9 +75,9 @@ export default function Home() {
                     )
                 })
             }
-           
-           {/* only render the previous events section if there are actually previous events: */}
-           {prevEvents.length > 0 ? 
+            
+            {/* only render the previous events section if there are actually previous events: */}
+            {prevEvents.length > 0 ? 
                 <>
                     <div className='events-title previous-events-title'>
                         <img
