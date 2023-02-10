@@ -13,12 +13,11 @@ export default function Welcome(props) {
 
     // render:
     return (
-        <div className='welcome-screen'>
+        <div className='welcome-screen' onClick={handleWelcomeClick} >
             <div className='logo-container'>
                 <img 
                     alt='graces' 
                     className='logo-img'
-                    onClick={handleWelcomeClick}
                     src={GracesLogo}  
                 />
             </div>
@@ -26,9 +25,11 @@ export default function Welcome(props) {
                 <img 
                     alt='graces' 
                     className='welcome-drawing-img'
-                    onClick={handleWelcomeClick} 
                     src={WelcomeDrawing} 
                 />
+            </div>
+            <div className='click-to-enter'>
+                <span className='click-to-enter-text helico-blue'>click to enter</span>
             </div>
         </div>
     )

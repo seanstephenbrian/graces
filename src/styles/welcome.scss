@@ -1,4 +1,7 @@
+$click-text-hover: 0.2s ease-in-out;
+
 .welcome-screen {
+    width: 100%;
     margin-top: calc(2*var(--rvv));
     display: flex;
     flex-direction: column;
@@ -10,6 +13,7 @@
         max-width: 100px;
 
         .logo-img {
+            // margin-left: calc(0.1*var(--rvv));
             width: 100%;
         }
     }
@@ -19,7 +23,25 @@
         max-width: 425px;
 
         .welcome-drawing-img {
+            border: 0.5px solid black;
+            border-radius: 5px;
             width: 100%;
+        }
+    }
+
+    .click-to-enter {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+
+        .click-to-enter-text {
+            margin-left: calc(0.25*var(--rvv));
+            width: fit-content;
+            cursor: pointer;
+            padding: 3px;
+            text-align: center;
+            font-size: calc(0.8*var(--rvv));
         }
     }
 }
@@ -27,7 +49,19 @@
 // desktop:
 @media screen and (min-width: 600px) {
     .welcome-screen {
-        margin-top: 0;
         align-self: center;
+
+        .click-to-enter-text {
+            transition:
+                color $click-text-hover,
+                text-shadow $click-text-hover,
+                transform $click-text-hover;
+        }
+
+        .click-to-enter-text:hover {
+            color: rgb(0, 0, 189);
+            text-shadow: 0 0 5px red;
+            transform: scale(1.1);
+        }
     } 
 }
