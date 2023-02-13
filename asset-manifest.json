@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.18b98a00.css",
-    "main.js": "/static/js/main.3bde3703.js",
+    "main.css": "/static/css/main.78bcd85c.css",
+    "main.js": "/static/js/main.c5aa1799.js",
     "static/media/2023-02-25.jpg": "/static/media/2023-02-25.fbe2537c01f0569915d9.jpg",
     "static/media/welcome-drawing.jpg": "/static/media/welcome-drawing.af1455afc74840d2ed01.jpg",
+    "static/media/arugula.png": "/static/media/arugula.da6793dcf51f884f82f8.png",
     "static/media/helico-centrica-roman.ttf": "/static/media/helico-centrica-roman.4dcf3f7251ae815952fd.ttf",
-    "static/media/arugula.jpg": "/static/media/arugula.80e5ff3f94ac2cc8d568.jpg",
-    "static/media/fennel.jpg": "/static/media/fennel.84101667a1fbc4d495af.jpg",
-    "static/media/delicata.png": "/static/media/delicata.ea6e63ecc4820c5fca09.png",
-    "static/media/graces-logo.jpg": "/static/media/graces-logo.0c35cbdadead5f48c3aa.jpg",
-    "static/media/apple-2.jpg": "/static/media/apple-2.a16256737a46171ac4ab.jpg",
-    "static/media/apple.jpg": "/static/media/apple.da2793f28ade1bb09054.jpg",
-    "static/media/previous.jpg": "/static/media/previous.82d44bfe9c5b82e2c2a5.jpg",
-    "static/media/upcoming.jpg": "/static/media/upcoming.834fb880d7436c54c61a.jpg",
+    "static/media/fennel.png": "/static/media/fennel.b483c05419f37497dc36.png",
+    "static/media/delicata.png": "/static/media/delicata.344968fb65be93380018.png",
+    "static/media/apple-2.png": "/static/media/apple-2.594a553c3486ee80279c.png",
+    "static/media/apple.png": "/static/media/apple.15bec7f98d733d427d1d.png",
+    "static/media/previous.png": "/static/media/previous.9e0f7adf71dbd2e35235.png",
+    "static/media/upcoming.png": "/static/media/upcoming.73c332ede8a2a84f1980.png",
+    "static/media/graces-logo-nobg.png": "/static/media/graces-logo-nobg.5361560eda3f7d5f0c7e.png",
     "static/media/graces-logo-white-nobg.png": "/static/media/graces-logo-white-nobg.8b6b124cbf506424d45a.png",
     "index.html": "/index.html",
-    "main.18b98a00.css.map": "/static/css/main.18b98a00.css.map",
-    "main.3bde3703.js.map": "/static/js/main.3bde3703.js.map"
+    "main.78bcd85c.css.map": "/static/css/main.78bcd85c.css.map",
+    "main.c5aa1799.js.map": "/static/js/main.c5aa1799.js.map"
   },
   "entrypoints": [
-    "static/css/main.18b98a00.css",
-    "static/js/main.3bde3703.js"
+    "static/css/main.78bcd85c.css",
+    "static/js/main.c5aa1799.js"
   ]
 }
