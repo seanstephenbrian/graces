@@ -9,6 +9,7 @@ export default function Flyer(props) {
 
     // props:
     const { 
+        eventText,
         flyerFilename,
         upcoming } = props;
 
@@ -24,6 +25,10 @@ export default function Flyer(props) {
 
     return (
         <div className={`event-flyer ${eventStatus}-event-flyer`}>
+            <div className='event-text helico-blue'>
+                {/* only show text description for upcoming events: */}
+                {upcoming ? eventText : ''}
+            </div>
             <img
                 alt='event flyer' 
                 className='event-flyer-img'

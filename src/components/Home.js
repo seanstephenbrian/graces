@@ -14,7 +14,8 @@ export default function Home() {
     const [events, setEvents] = useState([
         {
             date: '2023-02-25',
-            flyer: '2023-02-25.jpg'
+            flyer: '2023-02-25.jpg',
+            text: 'feb 25: pasta night at villa capri in doylestown, PA!'
         }
     ]);
 
@@ -67,7 +68,8 @@ export default function Home() {
                 // otherwise render a Flyer component for each event:
                 : upcomingEvents.map((event) => {
                     return (
-                        <Flyer 
+                        <Flyer
+                            eventText={event.text} 
                             flyerFilename={event.flyer}
                             key={uniqid()}
                             upcoming={true}
@@ -88,6 +90,7 @@ export default function Home() {
                     {prevEvents.map((event) => {
                         return (
                             <Flyer 
+                                eventText={event.text}
                                 flyerFilename={event.flyer}
                                 key={uniqid()}
                                 upcoming={false} 
