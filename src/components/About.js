@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { Link } from 'react-router-dom';
 
@@ -8,6 +8,11 @@ import AboutDrawing1 from '../img/drawings/arugula.jpg';
 import AboutDrawing2 from '../img/drawings/fennel.jpg';
 
 export default function About() {
+    
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div className='about-page'>
             <img 

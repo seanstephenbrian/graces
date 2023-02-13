@@ -18,12 +18,12 @@
     }
 
     .welcome-drawing-container {
-        width: 80vw;
-        max-width: 425px;
+        height: 50vh;
+        min-height: 500px;
 
         .welcome-drawing-img {
             border: 0.5px solid black;
-            width: 100%;
+            height: 100%;
         }
     }
 
@@ -48,6 +48,10 @@
 @media screen and (min-width: 600px) {
     .welcome-screen {
         align-self: center;
+
+        .welcome-drawing-container {
+            height: 60vh;
+        }
 
         .click-to-enter-text {
             transition:

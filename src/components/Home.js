@@ -23,6 +23,10 @@ export default function Home() {
     const [upcomingEvents, setUpcomingEvents] = useState([]);
 
     // hooks:
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     // generate previous/upcoming events arrays:
     useEffect(() => {
         setIsLoading(true);
