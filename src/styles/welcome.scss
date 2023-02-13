@@ -17,13 +17,15 @@
     }
 
     .welcome-drawing-container {
-        height: 50vh;
-        min-height: 500px;
+        display: flex;
+        flex-direction: column;
 
         .welcome-drawing-img {
+            height: 50vh;
+            margin-left: auto;
+            margin-right: auto;
             border: 1.5px solid black;
             border-radius: 10px;
-            height: 100%;
         }
     }
 
@@ -50,7 +52,9 @@
         align-self: center;
 
         .welcome-drawing-container {
-            height: 60vh;
+            .welcome-drawing-img {
+                height: 60vh;
+            }
         }
 
         .click-to-enter-text {

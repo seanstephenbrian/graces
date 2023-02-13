@@ -1,6 +1,6 @@
 .about-page {
     font-family: 'Helico Centrica';
-    font-size: calc(0.7*var(--rvv));
+    font-size: calc(0.8*var(--rvv));
     padding: 0 20vw;
     display: flex;
     flex-direction: column;
@@ -18,8 +18,8 @@
     }
 
     .about-drawing {
-        max-height: 100px;
-        max-width: 100px;
+        max-height: 120px;
+        max-width: 150px;
     }
 }
 
