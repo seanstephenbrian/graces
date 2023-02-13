@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.e1fe3e64.css",
-    "main.js": "/static/js/main.2685a666.js",
+    "main.css": "/static/css/main.ce88c7c4.css",
+    "main.js": "/static/js/main.8c349538.js",
     "static/media/2023-02-25.jpg": "/static/media/2023-02-25.730b58d38417b95b1aa0.jpg",
     "static/media/welcome-drawing.jpg": "/static/media/welcome-drawing.af1455afc74840d2ed01.jpg",
     "static/media/helico-centrica-roman.ttf": "/static/media/helico-centrica-roman.4dcf3f7251ae815952fd.ttf",
@@ -11,11 +11,11 @@
     "static/media/upcoming.jpg": "/static/media/upcoming.834fb880d7436c54c61a.jpg",
     "static/media/graces-logo-white-nobg.png": "/static/media/graces-logo-white-nobg.8b6b124cbf506424d45a.png",
     "index.html": "/index.html",
-    "main.e1fe3e64.css.map": "/static/css/main.e1fe3e64.css.map",
-    "main.2685a666.js.map": "/static/js/main.2685a666.js.map"
+    "main.ce88c7c4.css.map": "/static/css/main.ce88c7c4.css.map",
+    "main.8c349538.js.map": "/static/js/main.8c349538.js.map"
   },
   "entrypoints": [
-    "static/css/main.e1fe3e64.css",
-    "static/js/main.2685a666.js"
+    "static/css/main.ce88c7c4.css",
+    "static/js/main.8c349538.js"
   ]
 }
