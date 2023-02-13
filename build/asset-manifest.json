@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.0877bc19.css",
-    "main.js": "/static/js/main.c5aa1799.js",
+    "main.css": "/static/css/main.31086fc6.css",
+    "main.js": "/static/js/main.b45319ed.js",
     "static/media/2023-02-25.jpg": "/static/media/2023-02-25.fbe2537c01f0569915d9.jpg",
     "static/media/welcome-drawing.jpg": "/static/media/welcome-drawing.af1455afc74840d2ed01.jpg",
     "static/media/arugula.png": "/static/media/arugula.da6793dcf51f884f82f8.png",
@@ -15,11 +15,11 @@
     "static/media/graces-logo-nobg.png": "/static/media/graces-logo-nobg.5361560eda3f7d5f0c7e.png",
     "static/media/graces-logo-white-nobg.png": "/static/media/graces-logo-white-nobg.8b6b124cbf506424d45a.png",
     "index.html": "/index.html",
-    "main.0877bc19.css.map": "/static/css/main.0877bc19.css.map",
-    "main.c5aa1799.js.map": "/static/js/main.c5aa1799.js.map"
+    "main.31086fc6.css.map": "/static/css/main.31086fc6.css.map",
+    "main.b45319ed.js.map": "/static/js/main.b45319ed.js.map"
   },
   "entrypoints": [
-    "static/css/main.0877bc19.css",
-    "static/js/main.c5aa1799.js"
+    "static/css/main.31086fc6.css",
+    "static/js/main.b45319ed.js"
   ]
 }
