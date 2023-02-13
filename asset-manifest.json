@@ -1,21 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.ce88c7c4.css",
-    "main.js": "/static/js/main.8c349538.js",
-    "static/media/2023-02-25.jpg": "/static/media/2023-02-25.730b58d38417b95b1aa0.jpg",
+    "main.css": "/static/css/main.18b98a00.css",
+    "main.js": "/static/js/main.3bde3703.js",
+    "static/media/2023-02-25.jpg": "/static/media/2023-02-25.fbe2537c01f0569915d9.jpg",
     "static/media/welcome-drawing.jpg": "/static/media/welcome-drawing.af1455afc74840d2ed01.jpg",
     "static/media/helico-centrica-roman.ttf": "/static/media/helico-centrica-roman.4dcf3f7251ae815952fd.ttf",
+    "static/media/arugula.jpg": "/static/media/arugula.80e5ff3f94ac2cc8d568.jpg",
+    "static/media/fennel.jpg": "/static/media/fennel.84101667a1fbc4d495af.jpg",
     "static/media/delicata.png": "/static/media/delicata.ea6e63ecc4820c5fca09.png",
     "static/media/graces-logo.jpg": "/static/media/graces-logo.0c35cbdadead5f48c3aa.jpg",
+    "static/media/apple-2.jpg": "/static/media/apple-2.a16256737a46171ac4ab.jpg",
+    "static/media/apple.jpg": "/static/media/apple.da2793f28ade1bb09054.jpg",
     "static/media/previous.jpg": "/static/media/previous.82d44bfe9c5b82e2c2a5.jpg",
     "static/media/upcoming.jpg": "/static/media/upcoming.834fb880d7436c54c61a.jpg",
     "static/media/graces-logo-white-nobg.png": "/static/media/graces-logo-white-nobg.8b6b124cbf506424d45a.png",
     "index.html": "/index.html",
-    "main.ce88c7c4.css.map": "/static/css/main.ce88c7c4.css.map",
-    "main.8c349538.js.map": "/static/js/main.8c349538.js.map"
+    "main.18b98a00.css.map": "/static/css/main.18b98a00.css.map",
+    "main.3bde3703.js.map": "/static/js/main.3bde3703.js.map"
   },
   "entrypoints": [
-    "static/css/main.ce88c7c4.css",
-    "static/js/main.8c349538.js"
+    "static/css/main.18b98a00.css",
+    "static/js/main.3bde3703.js"
   ]
 }
