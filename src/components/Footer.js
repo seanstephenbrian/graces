@@ -2,8 +2,8 @@ import React from 'react';
 
 import '../styles/footer.scss';
 
-import FooterDrawing1 from '../img/drawings/apple.jpg';
-import FooterDrawing2 from '../img/drawings/apple-2.jpg';
+import FooterDrawing1 from '../img/drawings/apple.png';
+import FooterDrawing2 from '../img/drawings/apple-2.png';
 
 export default function Footer() {
     return (

@@ -4,7 +4,7 @@ import React from 'react';
 import '../styles/welcome.scss';
 
 // assets:
-import GracesLogo from '../img/graces-logo.jpg';
+import GracesLogo from '../img/graces-logo-nobg.png';
 import WelcomeDrawing from '../img/welcome-drawing.jpg';
 
 export default function Welcome(props) {

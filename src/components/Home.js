@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import uniqid from 'uniqid';
 
 import Flyer from '../components/Flyer';
-import PreviousText from '../img/previous.jpg';
-import UpcomingText from '../img/upcoming.jpg';
+import PreviousText from '../img/previous.png';
+import UpcomingText from '../img/upcoming.png';
 
 import '../styles/home.scss';
 

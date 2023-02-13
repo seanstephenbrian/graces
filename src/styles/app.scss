@@ -39,6 +39,9 @@ html {
         min-width: 100vw;
         max-width: 100vw;
         overflow-x: hidden;
+        background: rgb(130,78,74);
+background: linear-gradient(143deg, rgba(130,78,74,0.1852678571428571) 0%, rgba(225,178,112,0.21875) 100%);
+        // background-color: rgba(234, 211, 211, 0.429);
 
         .site-wrapper {
             width: 100vw;

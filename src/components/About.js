@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 import '../styles/about.scss';
 
-import AboutDrawing1 from '../img/drawings/arugula.jpg';
-import AboutDrawing2 from '../img/drawings/fennel.jpg';
+import AboutDrawing1 from '../img/drawings/arugula.png';
+import AboutDrawing2 from '../img/drawings/fennel.png';
 
 export default function About() {
     
