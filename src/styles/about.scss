@@ -16,6 +16,11 @@
             text-shadow: 0 0 5px #2fff00;
         }
     }
+
+    .about-drawing {
+        max-height: 100px;
+        max-width: 100px;
+    }
 }
 
 @media screen and (min-width: 600px) {
@@ -30,6 +35,14 @@
                 color: rgb(0, 0, 189);
                 text-shadow: 0 0 5px red;
             }
+        }
+
+        .about-drawing-1:hover {
+            transform: rotate(200deg);
+        }
+
+        .about-drawing-2:hover {
+            transform: rotate(160deg);
         }
     }
     

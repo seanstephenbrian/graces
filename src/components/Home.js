@@ -15,7 +15,7 @@ export default function Home() {
         {
             date: '2023-02-25',
             flyer: '2023-02-25.jpg',
-            text: 'feb 25: pasta night at villa capri in doylestown, PA!'
+            text: '2/25: pasta night at villa capri in doylestown!'
         }
     ]);
 
