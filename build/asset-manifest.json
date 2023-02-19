@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.31086fc6.css",
-    "main.js": "/static/js/main.b45319ed.js",
+    "main.js": "/static/js/main.ff0ac7c2.js",
     "static/media/2023-02-25.jpg": "/static/media/2023-02-25.fbe2537c01f0569915d9.jpg",
     "static/media/welcome-drawing.jpg": "/static/media/welcome-drawing.af1455afc74840d2ed01.jpg",
     "static/media/arugula.png": "/static/media/arugula.da6793dcf51f884f82f8.png",
@@ -16,10 +16,10 @@
     "static/media/graces-logo-white-nobg.png": "/static/media/graces-logo-white-nobg.8b6b124cbf506424d45a.png",
     "index.html": "/index.html",
     "main.31086fc6.css.map": "/static/css/main.31086fc6.css.map",
-    "main.b45319ed.js.map": "/static/js/main.b45319ed.js.map"
+    "main.ff0ac7c2.js.map": "/static/js/main.ff0ac7c2.js.map"
   },
   "entrypoints": [
     "static/css/main.31086fc6.css",
-    "static/js/main.b45319ed.js"
+    "static/js/main.ff0ac7c2.js"
   ]
 }
