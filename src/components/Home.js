@@ -12,11 +12,11 @@ export default function Home() {
     // state:
     const [isLoading, setIsLoading] = useState();
     const [events, setEvents] = useState([
-        {
-            date: '2023-02-25',
-            flyer: '2023-02-25.jpg',
-            text: '2/25: late-night pasta at villa capri in doylestown!'
-        }
+        // {
+        //     date: '2023-02-25',
+        //     flyer: '2023-02-25.jpg',
+        //     text: '2/25: late-night pasta at villa capri in doylestown!'
+        // }
     ]);
 
     const [prevEvents, setPrevEvents] = useState([]);
