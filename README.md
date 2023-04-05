@@ -4,6 +4,8 @@
 
 if you want to eat, we want to feed you!
 
+---
+
 the graces website was developed with react with an eye toward ease of maintenance.
 
 the main page contain an array of event objects in its component state, each of which contains an 
